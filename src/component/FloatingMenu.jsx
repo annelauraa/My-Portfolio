@@ -7,11 +7,16 @@ const FloatingMenu = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null); // Référence pour détecter les clics en dehors
+  const lastScrollY = useRef(window.scrollY);
 
   // Gérer la visibilité du bouton flottant lors du scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 100);
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY > 100);
+      if (currentScrollY > lastScrollY.current) {
+        setIsOpen(0);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
