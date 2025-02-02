@@ -3,24 +3,37 @@ import { motion } from "framer-motion";
 import {
   FaBars,
   FaEnvelope,
-  FaHandHolding,
   FaHome,
   FaInfoCircle,
-  FaPhone,
   FaProjectDiagram,
-  FaRProject,
   FaTimes,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import translations from "../translations";
-import { FaHandHoldingHand } from "react-icons/fa6";
 
-const FloatingMenu = ({ language }) => {
+const FloatingMenu = ({ language, activeSection }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null); // Référence pour détecter les clics en dehors
   const lastScrollY = useRef(window.scrollY);
-
+  const menuItems = [
+    { id: "home", icon: <FaHome />, label: translations[language].home },
+    {
+      id: "about",
+      icon: <FaInfoCircle />,
+      label: translations[language].about,
+    },
+    {
+      id: "projects",
+      icon: <FaProjectDiagram />,
+      label: translations[language].projects,
+    },
+    {
+      id: "contact",
+      icon: <FaEnvelope />,
+      label: translations[language].contact,
+    },
+  ];
   // Gérer la visibilité du bouton flottant lors du scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -75,36 +88,51 @@ const FloatingMenu = ({ language }) => {
 
       {/* Menu déroulant */}
       {isOpen && (
-        <motion.div
-          className="menu-content shadow-lg p-3 bg-white rounded"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
+        // <motion.div
+        //   className="menu-content shadow-lg p-3 bg-white rounded"
+        //   initial={{ opacity: 0, y: 10 }}
+        //   animate={{ opacity: 1, y: 0 }}
+        //   transition={{ duration: 0.3 }}
+        // >
+        //   <ul className="menu-links list-unstyled">
+        //     <li>
+        //       <a href="#home" onClick={() => setIsOpen(false)}>
+        //         <FaHome /> {translations[language].home}
+        //       </a>
+        //     </li>
+        //     <li>
+        //       <a href="#about" onClick={() => setIsOpen(false)}>
+        //         <FaInfoCircle />
+        //         {translations[language].about}
+        //       </a>
+        //     </li>
+        //     <li>
+        //       <a href="#projects" onClick={() => setIsOpen(false)}>
+        //         <FaProjectDiagram />
+        //         {translations[language].projects}
+        //       </a>
+        //     </li>
+        //     <li>
+        //       <a href="#contact" onClick={() => setIsOpen(false)}>
+        //         <FaEnvelope />
+        //         {translations[language].contact}
+        //       </a>
+        //     </li>
+        //   </ul>
+        // </motion.div>
+
+        <motion.div className="menu-content shadow-lg p-3 bg-white rounded">
           <ul className="menu-links list-unstyled">
-            <li>
-              <a href="#home" onClick={() => setIsOpen(false)}>
-                <FaHome /> {translations[language].home}
-              </a>
-            </li>
-            <li>
-              <a href="#about" onClick={() => setIsOpen(false)}>
-                <FaInfoCircle />
-                {translations[language].about}
-              </a>
-            </li>
-            <li>
-              <a href="#projects" onClick={() => setIsOpen(false)}>
-                <FaProjectDiagram />
-                {translations[language].projects}
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setIsOpen(false)}>
-                <FaEnvelope />
-                {translations[language].contact}
-              </a>
-            </li>
+            {menuItems.map((item) => (
+              <li
+                key={item.id}
+                className={activeSection === item.id ? "active" : ""}
+              >
+                <a href={`#${item.id}`}>
+                  {item.icon} {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </motion.div>
       )}

@@ -329,3 +329,7 @@ option {
   box-shadow: -1px 1px 5px gray;
   margin-right: 10px;
 }
+.menu-links li.active a {
+  font-weight: bold;
+  color: #da1577;
+}
