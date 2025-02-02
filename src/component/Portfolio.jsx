@@ -104,6 +104,7 @@ const Portfolio = () => {
       </motion.header>
 
       <motion.section id="home" className="text-center py-5 about-section">
+        <div className="backdrop-about-section"></div>
         <div className="pt-3 overlay-content">
           <img src={Profil} className="rounded-circle profil_image" alt="..." />
           <TypingEffect
@@ -123,7 +124,6 @@ const Portfolio = () => {
             </button>
           </div>
         </div>
-        <div className="backdrop-about-section"></div>
       </motion.section>
       <motion.section id="about">
         <AboutMe language={language} />

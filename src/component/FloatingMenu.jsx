@@ -3,17 +3,13 @@ import { motion } from "framer-motion";
 import {
   FaBars,
   FaEnvelope,
-  FaHandHolding,
   FaHome,
   FaInfoCircle,
-  FaPhone,
   FaProjectDiagram,
-  FaRProject,
   FaTimes,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import translations from "../translations";
-import { FaHandHoldingHand } from "react-icons/fa6";
 
 const FloatingMenu = ({ language }) => {
   const [isVisible, setIsVisible] = useState(false);
