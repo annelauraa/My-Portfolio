@@ -329,3 +329,12 @@ option {
   box-shadow: -1px 1px 5px gray;
   margin-right: 10px;
 }
+.project-card {
+  transition: transform 0.3s ease-in-out;
+}
+.project-card:hover {
+  background-color: #141414 !important;
+  box-shadow: 1px 1px 10px #464344 !important;
+  cursor: pointer;
+  transform: scale(1.05);
+}

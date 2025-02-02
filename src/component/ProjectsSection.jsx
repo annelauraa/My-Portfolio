@@ -45,7 +45,7 @@ const ProjectsSection = ({ translations, language }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="card bg-dark text-white border-0 shadow py-5 px-5 mx-3">
+              <div className="card project-card bg-dark text-white border-0 shadow py-5 px-5 mx-3">
                 <h5 className="card-title py-3">{project.title}</h5>
                 <img
                   src={project.image}

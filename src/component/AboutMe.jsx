@@ -38,7 +38,7 @@ const AboutMe = ({ language }) => {
           <hr className="pink" />
         </div>
         <div className="row mt-4">
-          <div className="col-md-4 mt-5 mb-5">
+          <div className="col-md-4 mt-5 mb-5 dev-web-skill">
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">{translations[language].web_dev}</h5>
@@ -49,7 +49,7 @@ const AboutMe = ({ language }) => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 align-items-center justify-content-center">
+          <div className="col-md-4 align-items-center justify-content-center des-web-skill">
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">{translations[language].web_des}</h5>
@@ -63,7 +63,7 @@ const AboutMe = ({ language }) => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 mt-5 mb-5">
+          <div className="col-md-4 mt-5 mb-5 cont-write-skill">
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">
