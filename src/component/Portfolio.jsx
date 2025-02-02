@@ -27,7 +27,6 @@ const flags = {
   mg: "https://flagcdn.com/w40/mg.png",
 };
 const Portfolio = () => {
-  
   const [scrollProgress, setScrollProgress] = useState(0);
   const [language, setLanguage] = useState("en"); // Langue par défaut
 
@@ -124,6 +123,7 @@ const Portfolio = () => {
             </button>
           </div>
         </div>
+        <div className="backdrop-about-section"></div>
       </motion.section>
       <motion.section id="about">
         <AboutMe language={language} />
