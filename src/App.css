@@ -338,3 +338,7 @@ option {
   cursor: pointer;
   transform: scale(1.05);
 }
+.menu-links li.active a {
+  font-weight: bold;
+  color: #da1577;
+}

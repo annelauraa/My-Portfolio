@@ -29,7 +29,7 @@ const flags = {
 const Portfolio = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [language, setLanguage] = useState("en"); // Langue par défaut
-
+  const [activeSection, setActiveSection] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -37,6 +37,22 @@ const Portfolio = () => {
         document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / scrollHeight) * 100;
       setScrollProgress(progress);
+
+      // Détecter quelle section est visible
+      const sections = ["home", "about", "projects", "contact"];
+      for (let id of sections) {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+          ) {
+            setActiveSection(id);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -103,7 +119,10 @@ const Portfolio = () => {
         </div>
       </motion.header>
 
-      <motion.section id="home" className="text-center py-5 about-section">
+      <motion.section
+        id="home"
+        className="section text-center py-5 about-section"
+      >
         <div className="backdrop-about-section"></div>
         <div className="pt-3 overlay-content">
           <img src={Profil} className="rounded-circle profil_image" alt="..." />
@@ -125,12 +144,16 @@ const Portfolio = () => {
           </div>
         </div>
       </motion.section>
-      <motion.section id="about">
+      <motion.section id=" section about">
         <AboutMe language={language} />
       </motion.section>
-      <ProjectsSection translations={translations} language={language} />
+      <ProjectsSection
+        translations={translations}
+        language={language}
+        className="section"
+      />
 
-      <motion.section id="contact" className=" py-5 text-center">
+      <motion.section id="contact" className=" py-5 text-center section">
         <h2 className="fs-3 fw-bold">{translations[language].contactMe}</h2>
         <p>{translations[language].collaboration}</p>
         <div className="d-flex justify-content-center gap-3 mt-3">
@@ -184,7 +207,7 @@ const Portfolio = () => {
           <Footer />
         </div>
       </motion.section>
-      <FloatingMenu language={language} />
+      <FloatingMenu language={language} activeSection={activeSection} />
     </div>
   );
 };
