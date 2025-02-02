@@ -27,6 +27,7 @@ const flags = {
   mg: "https://flagcdn.com/w40/mg.png",
 };
 const Portfolio = () => {
+  
   const [scrollProgress, setScrollProgress] = useState(0);
   const [language, setLanguage] = useState("en"); // Langue par défaut
 
