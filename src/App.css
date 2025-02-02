@@ -32,12 +32,10 @@ html {
   width: 100%;
   height: 100%;
   background: url("./assets/img/Bg-Silhouette.png") center/cover no-repeat;
-  z-index: 1; /* La silhouette doit être entre le fond et la superposition */
   opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
 }
 .overlay-content {
   position: relative;
-  z-index: 2; /* Texte au-dessus */
   color: rgb(63, 61, 61);
 }
 
@@ -288,6 +286,8 @@ option {
   font-size: 1.2em !important;
 }
 .menu-content {
+  padding: 2em;
+  text-align: start;
   position: fixed;
   top: 80px;
   right: 20px;
@@ -309,6 +309,10 @@ option {
 }
 
 .menu-links a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
   text-decoration: none;
   color: black;
   font-weight: bold;

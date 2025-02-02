@@ -184,7 +184,7 @@ const Portfolio = () => {
           <Footer />
         </div>
       </motion.section>
-      <FloatingMenu />
+      <FloatingMenu language={language} />
     </div>
   );
 };

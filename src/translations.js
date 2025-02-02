@@ -94,7 +94,7 @@ const translations = {
         projet3_content: "Sehatra fanabeazana momba ny teknika vaovao amin’ny fambolena mifanaraka amin’ny faritra maina.",
         lien_github: "Rohy Github",
         Naissance: "Teraka ny 03 Marsa taona 2002 ",
-        projects: "Asa",
+        projects: "Tetikasa",
         contact: "Fifandraisana",
         recentProjects: "Ny Tetikasako Farany",
         description: "Manana fitiavana amin'ny famoronana endrika maoderina sy mahafinaritra.",

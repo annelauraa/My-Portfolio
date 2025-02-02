@@ -1,9 +1,21 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
-import { FaBars, FaTimes } from "react-icons/fa";
+import {
+  FaBars,
+  FaEnvelope,
+  FaHandHolding,
+  FaHome,
+  FaInfoCircle,
+  FaPhone,
+  FaProjectDiagram,
+  FaRProject,
+  FaTimes,
+} from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
+import translations from "../translations";
+import { FaHandHoldingHand } from "react-icons/fa6";
 
-const FloatingMenu = () => {
+const FloatingMenu = ({ language }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null); // Référence pour détecter les clics en dehors
@@ -72,22 +84,25 @@ const FloatingMenu = () => {
           <ul className="menu-links list-unstyled">
             <li>
               <a href="#home" onClick={() => setIsOpen(false)}>
-                Accueil
+                <FaHome /> {translations[language].home}
               </a>
             </li>
             <li>
               <a href="#about" onClick={() => setIsOpen(false)}>
-                À propos
+                <FaInfoCircle />
+                {translations[language].about}
               </a>
             </li>
             <li>
               <a href="#projects" onClick={() => setIsOpen(false)}>
-                Projets
+                <FaProjectDiagram />
+                {translations[language].projects}
               </a>
             </li>
             <li>
               <a href="#contact" onClick={() => setIsOpen(false)}>
-                Contact
+                <FaEnvelope />
+                {translations[language].contact}
               </a>
             </li>
           </ul>
