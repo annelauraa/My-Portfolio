@@ -1,0 +1,328 @@
+html {
+  font-size: 14px;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/img/particles.gif") top/cover no-repeat;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(245, 242, 239, 0.7);
+  z-index: 1;
+}
+.about-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./assets/img/Bg-Silhouette.png") center/cover no-repeat;
+  z-index: 1; /* La silhouette doit être entre le fond et la superposition */
+  opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
+}
+.overlay-content {
+  position: relative;
+  z-index: 2; /* Texte au-dessus */
+  color: rgb(63, 61, 61);
+}
+
+.bg-laingo {
+  background-color: #db2c84;
+}
+
+.card {
+  padding: 2em;
+}
+
+.blink-caret {
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Définir l'animation "bounceIn" */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Appliquer un style particulier sur "Laingo" */
+.highlight {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #df1479;
+  font-weight: bold;
+  font-size: 1.2em;
+  animation: bounceIn 0.6s ease-out forwards;
+}
+.pink {
+  color: #df1479;
+}
+
+.text-plus-grand {
+  font-size: 3em;
+  line-height: 1em;
+}
+.profil_image {
+  box-shadow: 1px 1px 80px #db2c84;
+  width: 250px;
+  height: auto;
+}
+.App {
+  box-shadow: 1px 1px 5px #f187bc;
+}
+.lang_flag {
+  display: inline;
+  width: 20px;
+  height: auto;
+}
+select {
+  box-shadow: none !important;
+  border: none !important;
+  background-color: antiquewhite;
+  color: #df1479 !important;
+  font-weight: bold !important;
+}
+option {
+  color: rgb(53, 51, 51);
+}
+.nav-link {
+  color: #6b6769;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+.home {
+  color: #db2c84;
+}
+.nav-link:hover {
+  color: #db2c84;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1em;
+  text-decoration: underline;
+  text-decoration-color: #db2c84;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px; /* Épaisseur du soulignement */
+  text-underline-offset: 8px;
+}
+.nav-link:visited {
+  color: #6b6769;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+.home:visited {
+  color: #db2c84;
+}
+.hire_me_button {
+  padding: 1%;
+  border-radius: 3px;
+  width: 15%;
+  object-fit: fill;
+  background-color: #df1479;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+}
+.hire_me_button:hover {
+  background-color: #da1879;
+  box-shadow: 1px 1px 1px #b40e61;
+  font-size: 1.1em;
+}
+.hidden {
+  opacity: 0; /* Caché au départ */
+  transform: translateY(20px); /* Légèrement en bas */
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 5s; /* Délai de 3 secondes avant l'apparition */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-img-top {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+.card {
+  height: 100%;
+}
+.Github-link {
+  padding: 1%;
+  border-radius: 3px;
+  width: 15%;
+  object-fit: fill;
+  background-color: transparent;
+  border: 1px solid #fcf4f8;
+  color: #fcf4f8;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.Github-link:hover {
+  background-color: #fcf4f8;
+  color: rgb(36, 35, 35);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+}
+.bg-card {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-image: url("./assets/img/orange-texture.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(248, 238, 247, 0.39);
+}
+.en_avant {
+  color: #555050;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2em !important;
+}
+.container-projects {
+  padding: 10% !important;
+  margin-top: 10% !important;
+  height: 50vh !important;
+}
+.about-me-title {
+  background-image: url("./assets/img/il_fullxfull.5596335295_3cgn.webp");
+  background-repeat: no-repeat;
+}
+
+#contact {
+  margin-top: 30%;
+  height: 50vh;
+  width: auto;
+  position: relative;
+}
+.border-left-pink {
+  border-left: 5px solid#db2c84;
+  border-right: 5px solid#f3b1d2;
+  width: 50vw !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding: 1.2em !important;
+  color: #555050;
+}
+.footer {
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.floating-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+}
+
+.floating-button {
+  background-color: #df1479;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.floating-button:hover {
+  background-color: #da1577;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 1px 4px 30px rgba(116, 47, 47, 0.2);
+  font-size: 1.2em !important;
+}
+.menu-content {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+  padding: 10px;
+  z-index: 100;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-links li {
+  margin: 10px 0;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.menu-links a:hover {
+  color: #ff4a57;
+}
+.flag {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: -1px 1px 5px gray;
+  margin-right: 10px;
+}
