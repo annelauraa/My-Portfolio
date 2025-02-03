@@ -1,5 +1,5 @@
 import translations from "../translations";
-import { FaCalendar, FaDownLong, FaFlag, FaLocationDot } from "react-icons/fa6";
+import { FaCalendar, FaFile, FaFlag, FaLocationDot } from "react-icons/fa6";
 import im1 from "../assets/img/pngtree-about-me-presentation-landing-header-vector-png-image_11903557.png";
 import im2 from "../assets/img/woman-programmer-working-code-project_1282444-269253.avif";
 import im3 from "../assets/img/black-woman-with-headphones-working-laptop-computer_1282444-262339.avif";
@@ -9,12 +9,12 @@ const AboutMe = ({ language }) => {
   return (
     <section id="about" className="py-5 bg-light">
       <div className="container about-me-container">
-        <div className="row text-center container">
-          <div className="col">
-            <h2 className="display-4 my-5 about-me-title p-3">
+        <div className="text-center container">
+          <div className="">
+            <h2 className="display-4 about-me-title p-3">
               {translations[language].AboutMe}
             </h2>
-            <p className="lead">
+            <p className="lead details-of-me">
               <FaFlag className="pink" /> Malagasy |{" "}
               <FaCalendar className="pink" /> {translations[language].Naissance}{" "}
               <br />
@@ -22,23 +22,26 @@ const AboutMe = ({ language }) => {
               {translations[language].adresse}
             </p>
 
-            <a
-              href={cv}
-              className="pink text-decoration-none nav-link home"
-              target="blank"
-            >
-              {translations[language].voir_CV} <FaDownLong className="fs-6" />
-            </a>
+            <div className="d-flex align-items-center justify-content-center">
+              <a
+                href={cv}
+                className="pink text-decoration-none nav-link home"
+                target="blank"
+              >
+                {translations[language].voir_CV}
+              </a>
+              <FaFile className="fs-6 pink" />
+            </div>
           </div>
         </div>
         <div className=" flex d-flex">
-          <p className="lead fs-2 text-start m-auto pink  py-5">
-            {translations[language].competences}
+          <p className="lead fs-2 w-100 pink skills-title">
+            - {translations[language].competences} -
           </p>
           <hr className="pink" />
         </div>
-        <div className="row mt-4">
-          <div className="col-md-4 mt-5 mb-5 dev-web-skill">
+        <div className="row skills-content">
+          <div className="col-md-4  dev-web-skill">
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">{translations[language].web_dev}</h5>
@@ -53,7 +56,7 @@ const AboutMe = ({ language }) => {
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">{translations[language].web_des}</h5>
-                <p className="card-text mt-5">
+                <p className="card-text">
                   {translations[language].web_des_content}
                 </p>
                 <img src={im1} alt="" className="w-75 h-auto" />
@@ -63,7 +66,7 @@ const AboutMe = ({ language }) => {
               </div>
             </div>
           </div>
-          <div className="col-md-4 mt-5 mb-5 cont-write-skill">
+          <div className="col-md-4  cont-write-skill">
             <div className="card shadow-sm">
               <div className="card-body">
                 <h5 className="card-title">

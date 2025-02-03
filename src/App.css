@@ -227,6 +227,7 @@ option {
 .about-me-title {
   background-image: url("./assets/img/il_fullxfull.5596335295_3cgn.webp");
   background-repeat: no-repeat;
+  margin-top: 1%;
 }
 
 #contact {
@@ -359,8 +360,30 @@ option {
 }
 
 .title {
-  font-size: 3em;
+  font-size: 2.8em;
+  padding-left: 10%;
+  padding-right: 10%;
+  line-height: 1em;
 }
+.details-of-me {
+  margin-top: 5%;
+}
+.skills-title {
+  margin-top: 5% !important;
+}
+.skills-content {
+}
+.dev-web-skill {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.cont-write-skill {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+/* .web_des .card-text {
+  margin-top: 5%;
+} */
 /* ----------------------------------------------------- */
 /* Mobile First */
 @media (max-width: 575px) {
@@ -394,7 +417,6 @@ option {
     width: 17em;
   }
   #home {
-    padding-top: 6%;
     display: grid;
     place-items: center;
     place-items: top;
@@ -441,6 +463,8 @@ option {
     font-size: 1.6em;
     font-weight: 500;
     text-align: start;
+    padding-left: 0;
+    padding-right: 0;
     margin-left: 20%;
     margin-right: 12%;
     line-height: 1em;
@@ -464,6 +488,47 @@ option {
     line-height: 1em;
     margin-left: 20%;
     margin-right: 20%;
+  }
+  .details-of-me {
+    font-size: 0.8em !important;
+  }
+  .about-me-title {
+    margin-top: 10%;
+  }
+
+  .skills-title {
+    margin-top: 2% !important;
+  }
+  .dev-web-skill {
+    margin-top: 0;
+  }
+  .dev-web-skill .card,
+  .cont-write-skill .card {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: start !important;
+    text-wrap-mode: wrap;
+    padding-left: 5% !important;
+    height: fit-content;
+  }
+  .dev-web-skill .card-body,
+  .cont-write-skill .card-body {
+    border-left: 2px solid #da1879;
+    font-size: 1em;
+    padding-top: 0% !important;
+  }
+  .skills-content img {
+    width: 75% !important;
+    border: 1px solid #f3b1d2;
+    object-fit: cover;
+  }
+  .web_des {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: end !important;
+    text-wrap-mode: wrap;
+    padding-left: 5% !important;
+    height: fit-content;
   }
 }
 /* ------------------------------------------------------------- */
@@ -503,6 +568,8 @@ option {
     font-size: 1.6em;
     font-weight: 500;
     text-align: start;
+    padding-left: 0;
+    padding-right: 0;
     margin-left: 12%;
     margin-right: 12%;
     line-height: 1em;
@@ -528,11 +595,23 @@ option {
     margin-right: 20%;
   }
   #home {
-    padding-top: 6%;
     display: grid;
     place-items: center;
     place-items: top;
     height: 100vh;
+  }
+  .details-of-me {
+    font-size: 0.8em !important;
+  }
+  .about-me-title {
+    margin-top: 10%;
+  }
+  .skills-title {
+    margin-top: 2%;
+  }
+  .dev-web-skill {
+  }
+  .cont-write-skill {
   }
 }
 
