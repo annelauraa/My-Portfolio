@@ -11,9 +11,10 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import translations from "../translations";
 
-const FloatingMenu = ({ language, activeSection }) => {
+const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // État pour vérifier si l'écran est un mobile
   const menuRef = useRef(null); // Référence pour détecter les clics en dehors
   const lastScrollY = useRef(window.scrollY);
   const menuItems = [
@@ -34,14 +35,20 @@ const FloatingMenu = ({ language, activeSection }) => {
       label: translations[language].contact,
     },
   ];
+  const flags = {
+    fr: "https://flagcdn.com/w40/fr.png",
+    en: "https://flagcdn.com/w40/gb.png",
+    mg: "https://flagcdn.com/w40/mg.png",
+  };
   // Gérer la visibilité du bouton flottant lors du scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY > 100);
-      if (currentScrollY > lastScrollY.current) {
-        setIsOpen(0);
+      setIsVisible(currentScrollY > 100); // Afficher le bouton après un certain défilement
+      if (currentScrollY !== lastScrollY.current) {
+        setIsOpen(false); // Fermer le menu si on descend
       }
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -72,55 +79,39 @@ const FloatingMenu = ({ language, activeSection }) => {
     return () => document.removeEventListener("click", closeMenu);
   }, [isOpen]);
 
+  // Fonction pour détecter la taille de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767); // Si la largeur de la fenêtre est <= 575px, c'est un mobile
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Vérifie la taille de la fenêtre au chargement
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div ref={menuRef} className="position-fixed bottom-3 end-3">
-      {/* Bouton flottant */}
-      <motion.div
-        className="floating-menu"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
-        transition={{ duration: 0.3 }}
-      >
-        <button className="floating-button" onClick={toggleMenu}>
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </motion.div>
+    <div ref={menuRef} className=" bottom-3 end-3">
+      {/* Affiche le bouton flottant sur mobile ou après avoir fait défiler la page */}
+      {(isVisible || isMobile) && (
+        <motion.div
+          className="floating-menu"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{
+            opacity: isVisible || isMobile ? 1 : 0,
+            y: isVisible || isMobile ? 0 : 50,
+          }}
+          transition={{ duration: 0.3 }}
+        >
+          <button className="floating-button" onClick={toggleMenu}>
+            {isOpen ? <FaTimes size={16} /> : <FaBars size={20} />}
+          </button>
+        </motion.div>
+      )}
 
       {/* Menu déroulant */}
       {isOpen && (
-        // <motion.div
-        //   className="menu-content shadow-lg p-3 bg-white rounded"
-        //   initial={{ opacity: 0, y: 10 }}
-        //   animate={{ opacity: 1, y: 0 }}
-        //   transition={{ duration: 0.3 }}
-        // >
-        //   <ul className="menu-links list-unstyled">
-        //     <li>
-        //       <a href="#home" onClick={() => setIsOpen(false)}>
-        //         <FaHome /> {translations[language].home}
-        //       </a>
-        //     </li>
-        //     <li>
-        //       <a href="#about" onClick={() => setIsOpen(false)}>
-        //         <FaInfoCircle />
-        //         {translations[language].about}
-        //       </a>
-        //     </li>
-        //     <li>
-        //       <a href="#projects" onClick={() => setIsOpen(false)}>
-        //         <FaProjectDiagram />
-        //         {translations[language].projects}
-        //       </a>
-        //     </li>
-        //     <li>
-        //       <a href="#contact" onClick={() => setIsOpen(false)}>
-        //         <FaEnvelope />
-        //         {translations[language].contact}
-        //       </a>
-        //     </li>
-        //   </ul>
-        // </motion.div>
-
         <motion.div className="menu-content shadow-lg p-3 bg-white rounded">
           <ul className="menu-links list-unstyled">
             {menuItems.map((item) => (
@@ -128,12 +119,29 @@ const FloatingMenu = ({ language, activeSection }) => {
                 key={item.id}
                 className={activeSection === item.id ? "active" : ""}
               >
-                <a href={`#${item.id}`}>
+                <a href={`#${item.id}`} onClick={() => setIsOpen(false)}>
                   {item.icon} {item.label}
                 </a>
               </li>
             ))}
           </ul>
+          {isMobile && (
+            <div className="mb-show">
+              <hr />
+              <div className="select-lang-container align-items-center">
+                <img src={flags[language]} alt={language} className="flag" />
+                <select
+                  value={language}
+                  onChange={(e) => onLanguageChange(e.target.value)}
+                  className="form-select w-auto"
+                >
+                  <option value="fr">{translations[language].fr}</option>
+                  <option value="en">{translations[language].en}</option>
+                  <option value="mg">{translations[language].mg}</option>
+                </select>
+              </div>
+            </div>
+          )}
         </motion.div>
       )}
     </div>

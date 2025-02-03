@@ -32,6 +32,9 @@ const translations = {
         description: "Modern and interactive design enthusiast.",
         contactMe: "Contact Me",
         collaboration: "For collaboration or just to say Hello 😀",
+        fr: "French",
+        en: "English",
+        mg: "Malagasy",
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -66,6 +69,9 @@ const translations = {
         description: "Passionnée de la création de designs modernes et interactifs.",
         contactMe: "Contactez-moi",
         collaboration: "Pour une collaboration ou juste pour dire Bonjour 😀",
+        fr: "Français",
+        en: "Anglais",
+        mg: "Malgache",
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -100,6 +106,9 @@ const translations = {
         description: "Manana fitiavana amin'ny famoronana endrika maoderina sy mahafinaritra.",
         contactMe: "Mifandraisa amiko",
         collaboration: "Ho an'ny fiaraha-miasa na fotsiny hoe Miarahaba 😀",
+        fr: "Frantsay",
+        en: "Anglisy",
+        mg: "Malagasy",
     },
 };
 

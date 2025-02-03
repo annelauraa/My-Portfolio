@@ -11,10 +11,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TypingEffect from "./TypingEffect";
 import Profil from "../assets/img/il_fullxfull.4888297361_pbr0.webp";
 
-// import french_flag from "../assets/img/French.png";
-import english_flag from "../assets/img/English.png";
-import malagasy_flag from "../assets/img/Malagasy.png";
-
 import translations from "../translations";
 import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
@@ -29,6 +25,7 @@ const flags = {
 const Portfolio = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [language, setLanguage] = useState("en"); // Langue par défaut
+  const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   useEffect(() => {
     const handleScroll = () => {
@@ -58,22 +55,32 @@ const Portfolio = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  // Fonction pour détecter la taille de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767); // Si la largeur de la fenêtre est <= 575px, c'est un mobile
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Vérifie la taille de la fenêtre au chargement
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div className="bg-light text-dark min-vh-100 py-2 mx-3 rounded">
-      {/* Barre de progression */}
-      <motion.div
-        className="position-fixed top-0 start-0 bg-laingo"
-        style={{ height: "4px", width: `${scrollProgress}%`, zIndex: 1000 }}
-        initial={{ width: 0 }}
-        animate={{ width: `${scrollProgress}%` }}
-      />
-
-      <motion.header className="py-4 px-5 d-flex justify-content-between  bg-white shadow-sm ">
+    <div className="bg-light text-dark min-vh-100 mx-3 rounded">
+      <motion.header className="py-4 justify-content-between  bg-light shadow-sm header">
+        {/* Barre de progression */}
+        <motion.div
+          className="position-fixed top-0 start-0 bg-laingo"
+          style={{ height: "4px", width: `${scrollProgress}%`, zIndex: 1000 }}
+          initial={{ width: 0 }}
+          animate={{ width: `${scrollProgress}%` }}
+        />
         <h1 className="fs-3 fw-bold">
           <span className="pink">Laingo</span> Tsiory
         </h1>
-        <nav className="text-align-center">
+        <nav className="text-align-center mb-d-none">
           <ul className="nav">
             <li className="nav-item">
               <a href="#home" className="nav-link home ">
@@ -98,7 +105,7 @@ const Portfolio = () => {
           </ul>
         </nav>
         {/* Sélecteur de langue */}
-        <div className="d-flex align-items-center">
+        <div className="select-lang-container mb-d-none align-items-center">
           <img src={flags[language]} alt={language} className="flag" />
           <select
             className="form-select w-auto "
@@ -107,16 +114,18 @@ const Portfolio = () => {
             name="Language"
           >
             <option value="fr">FR</option>
-            <option value="en">
-              <img src={english_flag} alt="En" className="lang_flag" />
-              EN
-            </option>
-            <option value="mg">
-              <img src={malagasy_flag} alt="Mg" className="lang_flag" />
-              MG
-            </option>
+            <option value="en">EN</option>
+            <option value="mg">MG</option>
           </select>
         </div>
+
+        {isMobile && (
+          <FloatingMenu
+            language={language}
+            activeSection={activeSection}
+            onLanguageChange={setLanguage}
+          />
+        )}
       </motion.header>
 
       <motion.section
@@ -206,8 +215,10 @@ const Portfolio = () => {
           </motion.a>
           <Footer />
         </div>
+        {!isMobile && (
+          <FloatingMenu language={language} activeSection={activeSection} />
+        )}
       </motion.section>
-      <FloatingMenu language={language} activeSection={activeSection} />
     </div>
   );
 };

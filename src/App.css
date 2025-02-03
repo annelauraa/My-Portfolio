@@ -1,18 +1,13 @@
 html {
   font-size: 14px;
 }
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 .about-section {
   position: relative;
   width: 100%;
   height: 100%;
   background: url("./assets/img/particles.gif") top/cover no-repeat;
+  z-index: 0;
 }
 
 .backdrop-about-section {
@@ -95,7 +90,7 @@ html {
   height: auto;
 }
 .App {
-  box-shadow: 1px 1px 5px #f187bc;
+  box-shadow: 1px 1px 5px #e76ba9;
 }
 .lang_flag {
   display: inline;
@@ -111,6 +106,11 @@ select {
 }
 option {
   color: rgb(53, 51, 51);
+  background-color: #fcf4f8;
+}
+.nav {
+  display: flex;
+  justify-content: center; /* centre horizontalement les éléments */
 }
 .nav-link {
   color: #6b6769;
@@ -147,6 +147,7 @@ option {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border: none;
+  cursor: pointer;
 }
 .hire_me_button:hover {
   background-color: #da1879;
@@ -244,7 +245,6 @@ option {
   color: #555050;
 }
 .footer {
-  opacity: 0.7;
   position: absolute;
   bottom: 0 !important;
   margin-bottom: 0 !important;
@@ -253,7 +253,7 @@ option {
 
 .floating-menu {
   position: fixed;
-  top: 20px;
+  top: 12px !important;
   right: 20px;
   z-index: 3;
 }
@@ -341,4 +341,152 @@ option {
 .menu-links li.active a {
   font-weight: bold;
   color: #da1577;
+}
+.select-lang-container {
+  display: flex;
+  justify-content: center; /* centre horizontalement le sélecteur */
+  align-items: center; /* centre verticalement les éléments à l'intérieur */
+}
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1000 !important;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+/* ----------------------------------------------------- */
+/* Mobile First */
+@media (max-width: 575px) {
+  /* Styles pour petits smartphones */
+  #root {
+    max-width: 575px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/img/Bg-Silhouette.png") center/fill no-repeat;
+    opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
+  }
+
+  .card {
+    padding: 0 !important;
+  }
+
+  .profil_image {
+    width: 15em;
+  }
+
+  .hire_me_button {
+    width: fit-content;
+  }
+
+  .mb-d-none {
+    display: none;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-left: 2em;
+    padding-right: 3em;
+  }
+
+  .floating-menu {
+    position: fixed;
+    top: 18px;
+    right: 30px;
+    z-index: 3;
+  }
+
+  .flag {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-left: 5px;
+    box-shadow: none;
+    cursor: pointer;
+  }
+}
+/* ------------------------------------------------------------- */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Styles pour smartphones */
+  #root {
+    max-width: 767px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .mb-d-none {
+    display: none !important;
+  }
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-left: 2em;
+    padding-right: 3em;
+  }
+  .floating-menu {
+    position: fixed;
+    top: 18px;
+    right: 30px;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Styles pour tablettes */
+  #root {
+    max-width: 991px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Styles pour ordinateurs portables */
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  /* Styles pour écrans larges */
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1400px) {
+  /* Styles pour très grands écrans */
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
 }
