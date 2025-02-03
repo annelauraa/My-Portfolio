@@ -417,9 +417,8 @@ option {
     width: 17em;
   }
   #home {
-    display: grid;
-    place-items: center;
-    place-items: top;
+    padding-top: 10rem;
+    display: flex;
     height: 100vh;
   }
   .mb-d-none {
@@ -427,7 +426,7 @@ option {
   }
 
   .header {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

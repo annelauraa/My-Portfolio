@@ -131,7 +131,7 @@ const Portfolio = () => {
           />
         )}
       </motion.header>
-      <motion.section id="home" className="text-center py-5 about-section">
+      <motion.section id="home" className="text-center  about-section">
         <div>
           <div className="backdrop-about-section"></div>
           <div className=" overlay-content">
@@ -159,7 +159,7 @@ const Portfolio = () => {
           </div>
         </div>
       </motion.section>
-      <motion.section id=" section about">
+      <motion.section id=" about">
         <AboutMe language={language} />
       </motion.section>
       <ProjectsSection

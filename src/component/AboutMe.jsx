@@ -60,7 +60,7 @@ const AboutMe = ({ language }) => {
                   {translations[language].web_des_content}
                 </p>
                 <img src={im1} alt="" className="w-75 h-auto" />
-                <p className="pink fw-bold">
+                <p className="pink fw-bold mt-2">
                   {translations[language].modern_stylish}
                 </p>
               </div>
