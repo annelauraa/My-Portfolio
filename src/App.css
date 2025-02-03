@@ -326,8 +326,7 @@ option {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  box-shadow: -1px 1px 5px gray;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .project-card {
   transition: transform 0.3s ease-in-out;
@@ -358,10 +357,15 @@ option {
   padding-left: 3em;
   padding-right: 3em;
 }
+
+.title {
+  font-size: 3em;
+}
 /* ----------------------------------------------------- */
 /* Mobile First */
 @media (max-width: 575px) {
   /* Styles pour petits smartphones */
+
   #root {
     max-width: 575px;
     margin: 0 auto;
@@ -376,7 +380,8 @@ option {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("./assets/img/Bg-Silhouette.png") center/fill no-repeat;
+    background: url("./assets/img/il_fullxfull.4888297361_pbr0.png") center/fill
+      no-repeat;
     opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
   }
 
@@ -385,13 +390,16 @@ option {
   }
 
   .profil_image {
-    width: 15em;
+    box-shadow: 1px 1px 80px #db2c84;
+    width: 17em;
   }
-
-  .hire_me_button {
-    width: fit-content;
+  #home {
+    padding-top: 6%;
+    display: grid;
+    place-items: center;
+    place-items: top;
+    height: 100vh;
   }
-
   .mb-d-none {
     display: none;
   }
@@ -420,6 +428,42 @@ option {
     margin-left: 5px;
     box-shadow: none;
     cursor: pointer;
+  }
+
+  .text-plus-grand {
+    text-align: start !important;
+    margin-left: 18%;
+    margin-right: 12%;
+    font-size: 2.5em;
+    line-height: 1em;
+  }
+  .title {
+    font-size: 1.6em;
+    font-weight: 500;
+    text-align: start;
+    margin-left: 20%;
+    margin-right: 12%;
+    line-height: 1em;
+  }
+  .description {
+    font-size: 1em;
+    text-align: start;
+    margin-left: 20%;
+    margin-right: 12%;
+  }
+  .opt {
+    font-size: 1em;
+  }
+  .hire_me_button {
+    text-align: start;
+    padding: 0.8em;
+    width: fit-content;
+  }
+  .button {
+    text-align: start;
+    line-height: 1em;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 }
 /* ------------------------------------------------------------- */

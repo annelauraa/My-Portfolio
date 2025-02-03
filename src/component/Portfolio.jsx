@@ -80,44 +80,48 @@ const Portfolio = () => {
         <h1 className="fs-3 fw-bold">
           <span className="pink">Laingo</span> Tsiory
         </h1>
-        <nav className="text-align-center mb-d-none">
-          <ul className="nav">
-            <li className="nav-item">
-              <a href="#home" className="nav-link home ">
-                {translations[language].home}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#about" className="nav-link ">
-                {translations[language].about}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#projects" className="nav-link ">
-                {translations[language].projects}
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="#contact" className="nav-link ">
-                {translations[language].contact}
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {!isMobile && (
+          <nav className="text-align-center mb-d-none">
+            <ul className="nav">
+              <li className="nav-item">
+                <a href="#home" className="nav-link home ">
+                  {translations[language].home}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#about" className="nav-link ">
+                  {translations[language].about}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#projects" className="nav-link ">
+                  {translations[language].projects}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#contact" className="nav-link ">
+                  {translations[language].contact}
+                </a>
+              </li>
+            </ul>
+          </nav>
+        )}
         {/* Sélecteur de langue */}
-        <div className="select-lang-container mb-d-none align-items-center">
-          <img src={flags[language]} alt={language} className="flag" />
-          <select
-            className="form-select w-auto "
-            value={language}
-            onChange={(e) => setLanguage(e.target.value)}
-            name="Language"
-          >
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
-            <option value="mg">MG</option>
-          </select>
-        </div>
+        {!isMobile && (
+          <div className="select-lang-container mb-d-none align-items-center">
+            <img src={flags[language]} alt={language} className="flag" />
+            <select
+              className="form-select w-auto "
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              name="Language"
+            >
+              <option value="fr">{translations[language].fr}</option>
+              <option value="en">{translations[language].en}</option>
+              <option value="mg">{translations[language].mg}</option>
+            </select>
+          </div>
+        )}
 
         {isMobile && (
           <FloatingMenu
@@ -127,29 +131,31 @@ const Portfolio = () => {
           />
         )}
       </motion.header>
+      <motion.section id="home" className="text-center py-5 about-section">
+        <div>
+          <div className="backdrop-about-section"></div>
+          <div className=" overlay-content">
+            <img
+              src={Profil}
+              className="rounded-circle profil_image"
+              alt="..."
+            />
+            <TypingEffect
+              text1={translations[language].welcome}
+              text2={translations[language].name}
+            />
 
-      <motion.section
-        id="home"
-        className="section text-center py-5 about-section"
-      >
-        <div className="backdrop-about-section"></div>
-        <div className="pt-3 overlay-content">
-          <img src={Profil} className="rounded-circle profil_image" alt="..." />
-          <TypingEffect
-            text1={translations[language].welcome}
-            text2={translations[language].name}
-          />
+            <p className="hidden description">
+              {translations[language].description}
+            </p>
+            <p className="hidden lead title">{translations[language].title}</p>
 
-          <p className="hidden fs-5">{translations[language].description}</p>
-          <p className="hidden lead mt-1 fs-1">
-            {translations[language].title}
-          </p>
-
-          <div className="mt-5  hidden">
-            <p className="lead pink">{translations[language].opt}</p>
-            <button className="hire_me_button">
-              {translations[language].hire_me}
-            </button>
+            <div className="mt-1 button hidden">
+              {/* <p className="lead pink opt">{translations[language].opt}</p> */}
+              <button className="hire_me_button">
+                {translations[language].hire_me}
+              </button>
+            </div>
           </div>
         </div>
       </motion.section>

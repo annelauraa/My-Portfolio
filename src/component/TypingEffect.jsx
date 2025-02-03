@@ -41,10 +41,10 @@ const TypingEffect = ({ text1, text2, highlightWord }) => {
 
   return (
     <div className="container mt-5">
-      <h1
+      <p
         className="text-center text-plus-grand"
         dangerouslySetInnerHTML={{ __html: text }}
-      ></h1>
+      ></p>
     </div>
   );
 };

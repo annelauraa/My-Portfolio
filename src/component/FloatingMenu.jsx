@@ -14,8 +14,8 @@ import translations from "../translations";
 const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false); // État pour vérifier si l'écran est un mobile
-  const menuRef = useRef(null); // Référence pour détecter les clics en dehors
+  const [isMobile, setIsMobile] = useState(false);
+  const menuRef = useRef(null);
   const lastScrollY = useRef(window.scrollY);
   const menuItems = [
     { id: "home", icon: <FaHome />, label: translations[language].home },
@@ -128,12 +128,12 @@ const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
           {isMobile && (
             <div className="mb-show">
               <hr />
-              <div className="select-lang-container align-items-center">
+              <div className="select-lang-container align-items-center ">
                 <img src={flags[language]} alt={language} className="flag" />
                 <select
                   value={language}
                   onChange={(e) => onLanguageChange(e.target.value)}
-                  className="form-select w-auto"
+                  className="form-select w-auto "
                 >
                   <option value="fr">{translations[language].fr}</option>
                   <option value="en">{translations[language].en}</option>
