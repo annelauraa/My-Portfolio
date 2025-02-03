@@ -221,8 +221,6 @@ option {
   font-size: 2em !important;
 }
 .container-projects {
-  padding: 10% !important;
-  margin-top: 10% !important;
   height: 50vh !important;
 }
 .about-me-title {
@@ -386,6 +384,10 @@ option {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+#projects {
+  padding-top: 6.5rem;
+  padding-bottom: 4rem;
+}
 
 /* .web_des .card-text {
   margin-top: 5%;
@@ -533,6 +535,9 @@ option {
     text-align: end !important;
     text-wrap-mode: wrap;
     padding-left: 5% !important;
+    height: fit-content;
+  }
+  .container-projects {
     height: fit-content;
   }
 }

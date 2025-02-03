@@ -4,7 +4,7 @@ import im1 from "../assets/img/Site-Paneau-Solaire.jpg";
 import im2 from "../assets/img/Portfolio.png";
 import im3 from "../assets/img/Agriculture.avif";
 import { FaGithub } from "react-icons/fa6";
-
+import { useEffect, useState } from "react";
 const ProjectsSection = ({ translations, language }) => {
   const projects = [
     {
@@ -23,10 +23,23 @@ const ProjectsSection = ({ translations, language }) => {
       image: im3,
     },
   ];
+  const [isMobile, setIsMobile] = useState(false);
+  // Fonction pour détecter la taille de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767); // Si la largeur de la fenêtre est <= 575px, c'est un mobile
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Vérifie la taille de la fenêtre au chargement
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <motion.section
       id="projects"
-      className="my-5 p-5 bg-card text-center text-white rounded shadow-sm"
+      className=" bg-card text-center text-white rounded shadow-sm"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,7 +58,7 @@ const ProjectsSection = ({ translations, language }) => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="card project-card bg-dark text-white border-0 shadow py-5 px-5 mx-3">
+              <div className="card project-card bg-dark text-white border-0 shadow">
                 <h5 className="card-title py-3">{project.title}</h5>
                 <img
                   src={project.image}
