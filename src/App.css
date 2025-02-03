@@ -91,6 +91,7 @@ html {
 }
 .App {
   box-shadow: 1px 1px 5px #e76ba9;
+  position: relative;
 }
 .lang_flag {
   display: inline;
@@ -255,7 +256,7 @@ option {
 .floating-menu {
   position: fixed;
   top: 12px !important;
-  right: 20px;
+  right: 3rem;
   z-index: 3;
 }
 
@@ -381,6 +382,11 @@ option {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+#home {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 /* .web_des .card-text {
   margin-top: 5%;
 } */
@@ -649,7 +655,7 @@ option {
   #root {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
   }
 }
@@ -657,9 +663,9 @@ option {
 @media (min-width: 1400px) {
   /* Styles pour très grands écrans */
   #root {
-    max-width: 1280px;
+    min-width: 1400px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 0rem;
     text-align: center;
   }
 }
