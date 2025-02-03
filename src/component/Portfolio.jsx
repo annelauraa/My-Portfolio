@@ -222,7 +222,11 @@ const Portfolio = () => {
           <Footer />
         </div>
         {!isMobile && (
-          <FloatingMenu language={language} activeSection={activeSection} />
+          <FloatingMenu
+            language={language}
+            activeSection={activeSection}
+            onLanguageChange={setLanguage}
+          />
         )}
       </motion.section>
     </div>

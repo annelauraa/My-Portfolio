@@ -125,23 +125,21 @@ const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
               </li>
             ))}
           </ul>
-          {isMobile && (
-            <div className="mb-show">
-              <hr />
-              <div className="select-lang-container align-items-center ">
-                <img src={flags[language]} alt={language} className="flag" />
-                <select
-                  value={language}
-                  onChange={(e) => onLanguageChange(e.target.value)}
-                  className="form-select w-auto "
-                >
-                  <option value="fr">{translations[language].fr}</option>
-                  <option value="en">{translations[language].en}</option>
-                  <option value="mg">{translations[language].mg}</option>
-                </select>
-              </div>
+          <div className="mb-show">
+            <hr />
+            <div className="select-lang-container align-items-center ">
+              <img src={flags[language]} alt={language} className="flag" />
+              <select
+                value={language}
+                onChange={(e) => onLanguageChange(e.target.value)}
+                className="form-select w-auto "
+              >
+                <option value="fr">{translations[language].fr}</option>
+                <option value="en">{translations[language].en}</option>
+                <option value="mg">{translations[language].mg}</option>
+              </select>
             </div>
-          )}
+          </div>
         </motion.div>
       )}
     </div>
