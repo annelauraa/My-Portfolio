@@ -241,11 +241,11 @@ option {
   width: 50vw !important;
   margin-right: auto !important;
   margin-left: auto !important;
-  padding: 1.2em !important;
+  padding: 1%;
   color: #555050;
 }
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0 !important;
   margin-bottom: 0 !important;
   width: 100% !important;
@@ -370,8 +370,7 @@ option {
 .skills-title {
   margin-top: 5% !important;
 }
-.skills-content {
-}
+
 .dev-web-skill {
   margin-top: 5%;
   margin-bottom: 5%;
@@ -383,12 +382,68 @@ option {
 #home {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  height: fit-content !important;
 }
 #projects {
   padding-top: 6.5rem;
   padding-bottom: 4rem;
 }
+.mySwiper {
+  padding: 2rem !important;
+}
 
+/* Animation horizontale pour l'icône de la main */
+@keyframes handSlideHorizontal {
+  0% {
+    transform: translateX(-100px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+}
+@keyframes textAnimation {
+  0% {
+    opacity: 0.1;
+    font-size: 0.9em;
+  }
+  50% {
+    opacity: 1;
+    font-size: 1.3em;
+  }
+  100% {
+    opacity: 0.1;
+    font-size: 0.9em;
+  }
+}
+.hand-animation {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000; /* S'assurer que l'élément est bien au-dessus */
+}
+
+.hand-icon {
+  font-size: 40px;
+  animation: handSlideHorizontal 3s ease-in-out infinite; /* Appliquer l'animation uniquement à l'icône */
+}
+
+.hand-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #da1879;
+  animation: textAnimation 3s ease-in-out infinite;
+  text-shadow: 5px 5px 10px rgba(241, 239, 239, 0.87);
+}
 /* .web_des .card-text {
   margin-top: 5%;
 } */
@@ -403,7 +458,18 @@ option {
     padding: 0;
     text-align: center;
   }
-
+  .bg-card {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-image: url("./assets/img/orange-texture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #projects {
+    padding-top: 6.5rem;
+    height: fit-content;
+  }
   .about-section::after {
     content: "";
     position: absolute;
@@ -427,7 +493,7 @@ option {
   #home {
     padding-top: 10rem;
     display: flex;
-    height: 100vh;
+    height: fit-content !important;
   }
   .mb-d-none {
     display: none;
@@ -540,7 +606,18 @@ option {
   .container-projects {
     height: fit-content;
   }
+
+  .border-left-pink {
+    border-left: 5px solid#db2c84;
+    border-right: 5px solid#f3b1d2;
+    width: 75vw !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 1%;
+    color: #555050;
+  }
 }
+
 /* ------------------------------------------------------------- */
 @media (min-width: 576px) and (max-width: 767px) {
   /* Styles pour smartphones */
@@ -549,9 +626,29 @@ option {
     margin: 0 auto;
     padding: 0;
   }
-
+  .border-left-pink {
+    border-left: 5px solid#db2c84;
+    border-right: 5px solid#f3b1d2;
+    width: 75vw !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    padding: 1%;
+    color: #555050;
+  }
+  .bg-card {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background-image: url("./assets/img/orange-texture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .mb-d-none {
     display: none !important;
+  }
+  #projects {
+    padding-top: 6.5rem;
+    height: fit-content;
   }
   .header {
     position: sticky;

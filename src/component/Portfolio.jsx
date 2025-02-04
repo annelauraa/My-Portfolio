@@ -14,8 +14,8 @@ import Profil from "../assets/img/il_fullxfull.4888297361_pbr0.webp";
 import translations from "../translations";
 import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
-import Footer from "./Footer";
 import FloatingMenu from "./FloatingMenu";
+import Footer from "./Footer";
 
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
@@ -219,7 +219,6 @@ const Portfolio = () => {
               <FaEnvelope />
             </a>
           </motion.a>
-          <Footer />
         </div>
       </motion.section>
       {!isMobile && (
@@ -229,6 +228,8 @@ const Portfolio = () => {
           onLanguageChange={setLanguage}
         />
       )}
+
+      <Footer />
     </div>
   );
 };

@@ -35,6 +35,7 @@ const translations = {
         fr: "French",
         en: "English",
         mg: "Malagasy",
+        slide_tuto: "Swipe to scroll",
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -72,6 +73,7 @@ const translations = {
         fr: "Français",
         en: "Anglais",
         mg: "Malgache",
+        slide_tuto: "Glisser pour défiler",
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -109,6 +111,7 @@ const translations = {
         fr: "Frantsay",
         en: "Anglisy",
         mg: "Malagasy",
+        slide_tuto: "Akisaho",
     },
 };
 
