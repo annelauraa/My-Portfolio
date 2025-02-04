@@ -44,7 +44,7 @@ const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      setIsVisible(currentScrollY > 100); // Afficher le bouton après un certain défilement
+      setIsVisible(currentScrollY > 90); // Afficher le bouton après un certain défilement
       if (currentScrollY !== lastScrollY.current) {
         setIsOpen(false); // Fermer le menu si on descend
       }

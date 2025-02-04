@@ -329,6 +329,7 @@ option {
   margin-right: 5px;
 }
 .project-card {
+  margin-top: 2em;
   transition: transform 0.3s ease-in-out;
 }
 .project-card:hover {
@@ -387,6 +388,8 @@ option {
 #projects {
   padding-top: 6.5rem;
   padding-bottom: 4rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .mySwiper {
   padding: 2rem !important;
@@ -468,6 +471,9 @@ option {
   }
   #projects {
     padding-top: 6.5rem;
+    padding-bottom: 4rem;
+    padding-left: 0;
+    padding-right: 0;
     height: fit-content;
   }
   .about-section::after {
@@ -626,6 +632,12 @@ option {
     margin: 0 auto;
     padding: 0;
   }
+  #projects {
+    padding-top: 6.5rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    height: fit-content;
+  }
   .border-left-pink {
     border-left: 5px solid#db2c84;
     border-right: 5px solid#f3b1d2;
@@ -648,6 +660,7 @@ option {
   }
   #projects {
     padding-top: 6.5rem;
+    padding-bottom: 2em;
     height: fit-content;
   }
   .header {
@@ -740,15 +753,33 @@ option {
     padding: 0.8em;
     width: fit-content;
   }
+  #projects {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    height: fit-content;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Styles pour ordinateurs portables */
   #root {
-    max-width: 1280px;
+    max-width: 1199px;
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
+  }
+
+  #projects {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    height: 50vh;
+  }
+  .recent-projects {
+    padding-bottom: 1rem !important;
   }
 }
 
@@ -760,6 +791,16 @@ option {
     padding: 1rem;
     text-align: center;
   }
+  #projects {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    height: 50vh;
+  }
+  .recent-projects {
+    padding-bottom: 2rem !important;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -769,5 +810,15 @@ option {
     margin: 0 auto;
     padding: 0rem;
     text-align: center;
+  }
+  #projects {
+    padding-top: 6.5rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    height: 50vh;
+  }
+  .recent-projects {
+    padding-bottom: 3rem !important;
   }
 }

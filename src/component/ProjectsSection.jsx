@@ -7,23 +7,24 @@ import { FaGithub } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FaHandPointUp } from "react-icons/fa";
+import { FaCircle, FaHandPointUp } from "react-icons/fa";
 
 const ProjectsSection = ({ translations, language }) => {
   const projects = [
-    {
-      title: translations[language].projet1_titre,
-      description: translations[language].projet1_content,
-      image: im1,
-    },
     {
       title: translations[language].projet2_titre,
       description: translations[language].projet2_content,
       image: im2,
     },
+    {
+      title: translations[language].projet1_titre,
+      description: translations[language].projet1_content,
+      image: im1,
+    },
+
     {
       title: translations[language].projet3_titre,
       description: translations[language].projet3_content,
@@ -64,8 +65,10 @@ const ProjectsSection = ({ translations, language }) => {
       {!isMobile && (
         <div>
           <div className="row justify-content-center">
-            <h2 className="fs-1 fw-bold pink">
-              {translations[language]?.recentProjects}
+            <h2 className="fs-1 fw-bold pink recent-projects">
+              <FaCircle className="fs-6" />{" "}
+              {translations[language]?.recentProjects}{" "}
+              <FaCircle className="fs-6" />
             </h2>
             {projects.map((project, index) => (
               <motion.div
@@ -77,7 +80,10 @@ const ProjectsSection = ({ translations, language }) => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <div className="card project-card bg-dark text-white border-0 shadow">
-                  <h5 className="card-title py-3">{project.title}</h5>
+                  <h5 className="card-title py-4 fw-bold ">
+                    <span className="pink">~</span> {project.title}{" "}
+                    <span className="pink">~</span>
+                  </h5>
                   <img
                     src={project.image}
                     className="card-img-top"
@@ -98,19 +104,17 @@ const ProjectsSection = ({ translations, language }) => {
 
       {isMobile && (
         <div>
-          <h2 className="fs-1 fw-bold mb-4 pink">
-            {translations[language]?.recentProjects}
+          <h2 className="fs-1 fw-bold recents-projects pink">
+            <FaCircle className="fs-6" />{" "}
+            {translations[language]?.recentProjects}{" "}
+            <FaCircle className="fs-6" />
           </h2>
 
           <Swiper
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
-            autoplay={{
-              delay: 3000, // Délai entre chaque slide (en millisecondes)
-              disableOnInteraction: false, // L'autoplay continue même si l'utilisateur interagit avec le carousel
-            }}
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation]}
             className="mySwiper"
             onTouchStart={handleTouchStart} // Utilise l'événement touchstart pour détecter l'interaction
           >
@@ -127,14 +131,17 @@ const ProjectsSection = ({ translations, language }) => {
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
                 <motion.div
-                  className="col-md-6 col-lg-4 mb-4 m-auto "
+                  className="col-md-6 col-lg-4 m-auto "
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   <div className="card project-card bg-dark text-white border-0 shadow">
-                    <h5 className="card-title py-3">{project.title}</h5>
+                    <h5 className="card-title py-4 fw-bold ">
+                      <span className="pink">~</span> {project.title}{" "}
+                      <span className="pink">~</span>
+                    </h5>
                     <img
                       src={project.image}
                       className="card-img-top"
