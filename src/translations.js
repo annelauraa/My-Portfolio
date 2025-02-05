@@ -36,6 +36,7 @@ const translations = {
         en: "English",
         mg: "Malagasy",
         slide_tuto: "Swipe to scroll",
+        tech_i_use: "My Techonolies and Tools",
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -74,6 +75,7 @@ const translations = {
         en: "Anglais",
         mg: "Malgache",
         slide_tuto: "Glisser pour défiler",
+        tech_i_use: "Mes Outils et Technologies",
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -112,6 +114,7 @@ const translations = {
         en: "Anglisy",
         mg: "Malagasy",
         slide_tuto: "Akisaho",
+        tech_i_use: "Ireo Teknolojia sy kojakoja fampiasako",
     },
 };
 

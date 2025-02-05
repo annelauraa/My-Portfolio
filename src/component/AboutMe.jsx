@@ -1,9 +1,11 @@
 import translations from "../translations";
+import PropTypes from "prop-types";
 import { FaCalendar, FaFile, FaFlag, FaLocationDot } from "react-icons/fa6";
 import im1 from "../assets/img/pngtree-about-me-presentation-landing-header-vector-png-image_11903557.png";
-import im2 from "../assets/img/woman-programmer-working-code-project_1282444-269253.avif";
-import im3 from "../assets/img/black-woman-with-headphones-working-laptop-computer_1282444-262339.avif";
+import im2 from "../assets/img/hand-drawn-flat-design-api-illustration_23-2149365021.avif";
+import im3 from "../assets/img/Web-Design-PNG-Image.png";
 import cv from "../assets/pdf/CV-2024.pdf";
+import TechStack from "./TechStack";
 
 const AboutMe = ({ language }) => {
   return (
@@ -26,7 +28,7 @@ const AboutMe = ({ language }) => {
               <a
                 href={cv}
                 className="pink text-decoration-none nav-link home"
-                target="blank"
+                target="_blank"
               >
                 {translations[language].voir_CV}
               </a>
@@ -59,7 +61,7 @@ const AboutMe = ({ language }) => {
                 <p className="card-text">
                   {translations[language].web_des_content}
                 </p>
-                <img src={im1} alt="" className="w-75 h-auto" />
+                <img src={im3} alt="" className="w-75 h-auto" />
                 <p className="pink fw-bold mt-2">
                   {translations[language].modern_stylish}
                 </p>
@@ -75,14 +77,19 @@ const AboutMe = ({ language }) => {
                 <p className="card-text">
                   {translations[language].Content_wr_content}
                 </p>
-                <img src={im3} alt="" className="w-50 h-auto" />
+                <img src={im1} alt="" className="w-50 h-auto" />
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <TechStack language={language} />
     </section>
   );
+};
+AboutMe.propTypes = {
+  language: PropTypes.string.isRequired, // language doit être une chaîne de caractères
 };
 
 export default AboutMe;

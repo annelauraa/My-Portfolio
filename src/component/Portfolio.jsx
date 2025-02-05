@@ -168,7 +168,7 @@ const Portfolio = () => {
         className="section"
       />
 
-      <motion.section id="contact" className=" py-5 text-center section">
+      <motion.section id="contact" className=" py-5 px-5 text-center ">
         <h2 className="fs-3 fw-bold">{translations[language].contactMe}</h2>
         <p>{translations[language].collaboration}</p>
         <div className="d-flex justify-content-center gap-3 mt-3">

@@ -426,13 +426,14 @@ option {
 }
 .hand-animation {
   position: absolute;
-  top: 10%;
+  top: 78%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 1000; /* S'assurer que l'élément est bien au-dessus */
+  margin-bottom: 1rem;
 }
 
 .hand-icon {
@@ -445,8 +446,9 @@ option {
   font-weight: 700;
   color: #da1879;
   animation: textAnimation 3s ease-in-out infinite;
-  text-shadow: 5px 5px 10px rgba(241, 239, 239, 0.87);
+  text-shadow: 5px 5px 20px rgba(241, 239, 239, 0.87);
 }
+
 /* .web_des .card-text {
   margin-top: 5%;
 } */
