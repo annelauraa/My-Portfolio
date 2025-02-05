@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false); // Après 3 secondes, la page de chargement se termine
-    }, 6200);
+    }, 8000);
   }, []);
   return <div className="App">{isLoading ? <Loading /> : <Portfolio />}</div>;
 }

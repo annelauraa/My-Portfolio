@@ -8,8 +8,8 @@ body {
 /* Style global de la barre de défilement */
 ::-webkit-scrollbar {
   margin: 2%;
-  width: 5px; /* Largeur de la barre de défilement verticale */
-  height: 5px; /* Hauteur de la barre de défilement horizontale */
+  width: 10px; /* Largeur de la barre de défilement verticale */
+  height: 10px; /* Hauteur de la barre de défilement horizontale */
 }
 
 /* Piste de la barre de défilement */
@@ -20,8 +20,7 @@ body {
 
 /* Partie mobile de la barre de défilement (le pouce) */
 ::-webkit-scrollbar-thumb {
-  background: #ff69b4; /* Couleur rose pour le pouce */
-  border-radius: 50%; /* Forme circulaire */
+  background: #fa51a6; /* Forme circulaire */
   width: 16px; /* Diamètre du pouce (point rond) */
   height: 16px; /* Diamètre du pouce (point rond) */
   margin: 2px; /* Espace autour du pouce pour qu'il dépasse légèrement de la piste */
