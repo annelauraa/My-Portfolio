@@ -329,7 +329,7 @@ option {
   margin-right: 5px;
 }
 .project-card {
-  margin-top: 2em;
+  margin-top: 0.5em;
   transition: transform 0.3s ease-in-out;
 }
 .project-card:hover {
@@ -392,7 +392,6 @@ option {
   padding-right: 2rem;
 }
 .mySwiper {
-  padding: 2rem !important;
 }
 
 /* Animation horizontale pour l'icône de la main */
@@ -413,40 +412,48 @@ option {
 @keyframes textAnimation {
   0% {
     opacity: 0.1;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
   50% {
     opacity: 1;
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   100% {
     opacity: 0.1;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 .hand-animation {
   position: absolute;
-  top: 78%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1000; /* S'assurer que l'élément est bien au-dessus */
-  margin-bottom: 1rem;
+  z-index: 1000;
 }
-
+.hint {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
 .hand-icon {
   font-size: 40px;
   animation: handSlideHorizontal 3s ease-in-out infinite; /* Appliquer l'animation uniquement à l'icône */
 }
 
 .hand-text {
-  font-size: 12px;
   font-weight: 700;
+  text-shadow: 1px 1px 20px #e76ba9;
   color: #da1879;
+  text-wrap-mode: nowrap;
   animation: textAnimation 3s ease-in-out infinite;
-  text-shadow: 5px 5px 20px rgba(241, 239, 239, 0.87);
 }
 
 /* .web_des .card-text {
@@ -473,7 +480,7 @@ option {
   }
   #projects {
     padding-top: 6.5rem;
-    padding-bottom: 4rem;
+    padding-bottom: 1rem;
     padding-left: 0;
     padding-right: 0;
     height: fit-content;

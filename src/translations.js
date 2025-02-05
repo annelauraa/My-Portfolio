@@ -37,7 +37,7 @@ const translations = {
         mg: "Malagasy",
         slide_tuto: "Swipe to scroll",
         tech_i_use: "My Technologies and Tools",
-        swipe_hint: "Just slide your screen 😊",
+        swipe_hint: "Just slide forward or back",
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -77,7 +77,7 @@ const translations = {
         mg: "Malgache",
         slide_tuto: "Glisser pour défiler",
         tech_i_use: "Mes Outils et Technologies",
-        swipe_hint: "Glisser juste votre ecran 😊",
+        swipe_hint: "Glisser juste en avant ou en arriere",
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -117,7 +117,7 @@ const translations = {
         mg: "Malagasy",
         slide_tuto: "Akisaho",
         tech_i_use: "Ireo Teknolojia sy kojakoja fampiasako",
-        swipe_hint: "Akisaho fotsiny amin'ny tanana 😊",
+        swipe_hint: "Akisaho mandroso na miverina fotsiny",
     },
 };
 

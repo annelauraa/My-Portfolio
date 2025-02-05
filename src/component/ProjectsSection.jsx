@@ -38,6 +38,7 @@ const ProjectsSection = ({ translations, language }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [showHand, setShowHand] = useState(true);
   const [showSwipeHint, setShowSwipeHint] = useState(false);
+  const [showButtons, setShowButtons] = useState(true); // Nouvelle variable d'état pour les boutons
 
   useEffect(() => {
     const handleResize = () => {
@@ -59,7 +60,11 @@ const ProjectsSection = ({ translations, language }) => {
   const handleButtonClick = () => {
     if (!showHand) {
       setShowSwipeHint(true);
-      setTimeout(() => setShowSwipeHint(false), 3000);
+      setShowButtons(false); // Masquer les boutons quand le tutoriel s'affiche
+      setTimeout(() => {
+        setShowSwipeHint(false);
+        setShowButtons(true); // Réafficher les boutons après 3 secondes
+      }, 3000);
     }
   };
 
@@ -124,27 +129,27 @@ const ProjectsSection = ({ translations, language }) => {
             ))}
           </Swiper>
 
-          {!showHand && (
+          {showButtons && !showHand && (
             <div>
-              <button className="btn " onClick={handleButtonClick}>
-                <FaChevronLeft className="pink fs-4" />
+              <button className=" btn" onClick={handleButtonClick}>
+                <FaChevronLeft className="pink fs-6" />
               </button>
-              <button className="btn " onClick={handleButtonClick}>
-                <FaChevronRight className="pink fs-4" />
+              <button className="btn" onClick={handleButtonClick}>
+                <FaChevronRight className="pink fs-6" />
               </button>
             </div>
           )}
 
           {showSwipeHint && (
             <motion.div
-              className="swipe-hint text-warning fw-bold mt-2"
+              className="swipe-hint fw-bold mt-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="hand-animation pink">
-                <div className="hand-icon">
+              <div className=" hint pink">
+                <div className="hand-icon ">
                   <FaHandPointer />
                 </div>
                 <p className="hand-text">{translations[language].swipe_hint}</p>
