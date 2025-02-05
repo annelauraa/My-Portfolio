@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
+
+.handwriting-container {
+  position: relative;
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid gray; /* Simule une ligne d'écriture */
+}
+
+.handwriting-text {
+  border-right: 2px solid black;
+  animation: blink 0.7s infinite step-end alternate;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.pen {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  transition: left 0.15s ease-out, top 0.15s ease-out;
+}

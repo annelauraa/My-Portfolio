@@ -1,4 +1,5 @@
 import translations from "../translations";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { FaCalendar, FaFile, FaFlag, FaLocationDot } from "react-icons/fa6";
 import im1 from "../assets/img/pngtree-about-me-presentation-landing-header-vector-png-image_11903557.png";
@@ -43,44 +44,72 @@ const AboutMe = ({ language }) => {
           <hr className="pink" />
         </div>
         <div className="row skills-content`">
-          <div className="col-md-4  dev-web-skill">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">{translations[language].web_dev}</h5>
-                <p className="card-text">
-                  {translations[language].web_dev_content}
-                </p>
-                <img src={im2} alt="" className="w-50 h-auto" />
+          <motion.div
+            className="col-md-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className=" dev-web-skill">
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {translations[language].web_dev}
+                  </h5>
+                  <p className="card-text">
+                    {translations[language].web_dev_content}
+                  </p>
+                  <img src={im2} alt="" className="w-50 h-auto" />
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-4 align-items-center justify-content-center des-web-skill">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">{translations[language].web_des}</h5>
-                <p className="card-text">
-                  {translations[language].web_des_content}
-                </p>
-                <img src={im3} alt="" className="w-75 h-auto" />
-                <p className="pink fw-bold mt-2">
-                  {translations[language].modern_stylish}
-                </p>
+          </motion.div>
+          <motion.div
+            className="col-md-4 align-items-center justify-content-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className=" des-web-skill">
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {translations[language].web_des}
+                  </h5>
+                  <p className="card-text">
+                    {translations[language].web_des_content}
+                  </p>
+                  <img src={im3} alt="" className="w-75 h-auto" />
+                  <p className="pink fw-bold mt-2">
+                    {translations[language].modern_stylish}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-4  cont-write-skill">
-            <div className="card shadow-sm">
-              <div className="card-body">
-                <h5 className="card-title">
-                  {translations[language].Content_wr}
-                </h5>
-                <p className="card-text">
-                  {translations[language].Content_wr_content}
-                </p>
-                <img src={im1} alt="" className="w-50 h-auto" />
+          </motion.div>
+          <motion.div
+            className="col-md-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <div className="cont-write-skill">
+              <div className="card shadow-sm">
+                <div className="card-body">
+                  <h5 className="card-title">
+                    {translations[language].Content_wr}
+                  </h5>
+                  <p className="card-text">
+                    {translations[language].Content_wr_content}
+                  </p>
+                  <img src={im1} alt="" className="w-50 h-auto" />
+                </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

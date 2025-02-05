@@ -83,10 +83,10 @@ export default function TechStack({ language }) {
           <motion.div
             key={tech.name}
             className="col-md-2 col-sm-1 col-3 mb-4"
-            whileHover={{ scale: 1.2 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
             style={{ width: "5rem", height: "auto" }}
           >
             <img

@@ -6,6 +6,7 @@ import im3 from "../assets/img/Agriculture.avif";
 import {
   FaChevronLeft,
   FaChevronRight,
+  FaCircle,
   FaGithub,
   FaHandPointer,
 } from "react-icons/fa6";
@@ -76,6 +77,46 @@ const ProjectsSection = ({ translations, language }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      {!isMobile && (
+        <div>
+          <div className="row justify-content-center">
+            <h2 className="fs-1 fw-bold pink recent-projects mb-2">
+              <FaCircle className="fs-6" />{" "}
+              {translations[language]?.recentProjects}{" "}
+              <FaCircle className="fs-6" />
+            </h2>
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="col-md-6 col-lg-4 mb-4"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <div className="card project-card bg-dark text-white border-0 shadow">
+                  <h5 className="card-title py-4 fw-bold ">
+                    <span className="pink">~</span> {project.title}{" "}
+                    <span className="pink">~</span>
+                  </h5>
+                  <img
+                    src={project.image}
+                    className="card-img-top"
+                    alt={project.title}
+                  />
+                  <div className="card-body">
+                    <p className="card-text">{project.description}</p>
+                    <button className="Github-link w-75 p-2 mt-2">
+                      <FaGithub /> {translations[language].lien_github}
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {isMobile && (
         <div>
           <h2 className="fs-1 fw-bold recents-projects pink">

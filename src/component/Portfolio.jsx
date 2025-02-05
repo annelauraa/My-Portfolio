@@ -16,7 +16,6 @@ import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
 import FloatingMenu from "./FloatingMenu";
 import Footer from "./Footer";
-
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
   en: "https://flagcdn.com/w40/gb.png", // Drapeau anglais (UK)
@@ -133,7 +132,7 @@ const Portfolio = () => {
       </motion.header>
       <motion.section id="home" className="text-center  about-section">
         <div>
-          <div className="backdrop-about-section"></div>
+          {/* <div className="backdrop-about-section"></div> */}
           <div className=" overlay-content">
             <img
               src={Profil}
@@ -228,7 +227,6 @@ const Portfolio = () => {
           onLanguageChange={setLanguage}
         />
       )}
-
       <Footer />
     </div>
   );
