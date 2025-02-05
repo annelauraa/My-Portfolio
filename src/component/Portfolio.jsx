@@ -16,6 +16,7 @@ import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
 import FloatingMenu from "./FloatingMenu";
 import Footer from "./Footer";
+import HandwritingWithPen from "./HandwritingText";
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
   en: "https://flagcdn.com/w40/gb.png", // Drapeau anglais (UK)

@@ -32,7 +32,7 @@ const TypingEffect = ({ text1, text2, highlightWord }) => {
           clearInterval(interval);
         }
         index++;
-      }, 100);
+      }, 110);
     };
 
     startTyping();

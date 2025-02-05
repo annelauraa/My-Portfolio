@@ -38,6 +38,7 @@ const translations = {
         slide_tuto: "Swipe to scroll",
         tech_i_use: "My Technologies and Tools",
         swipe_hint: "Just slide forward or back",
+        thanks: "Thank you for your visit! 😊"
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -78,6 +79,7 @@ const translations = {
         slide_tuto: "Glisser pour défiler",
         tech_i_use: "Mes Outils et Technologies",
         swipe_hint: "Glisser juste en avant ou en arriere",
+        thanks: "Merci pour votre visite! 😊"
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -118,6 +120,7 @@ const translations = {
         slide_tuto: "Akisaho",
         tech_i_use: "Ireo Teknolojia sy kojakoja fampiasako",
         swipe_hint: "Akisaho mandroso na miverina fotsiny",
+        thanks: "Mankasitraka amin'ny fitsidihanao! 😊"
     },
 };
 

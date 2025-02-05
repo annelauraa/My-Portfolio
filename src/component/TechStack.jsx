@@ -86,7 +86,7 @@ export default function TechStack({ language }) {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: index * 0.2 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
             style={{ width: "5rem", height: "auto" }}
           >
             <img

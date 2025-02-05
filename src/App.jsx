@@ -1,11 +1,15 @@
 import "./App.css";
 import Portfolio from "./component/Portfolio";
+import { useState, useEffect } from "react";
+import Loading from "./component/Loading";
 function App() {
-  return (
-    <div className="App">
-      <Portfolio />
-    </div>
-  );
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false); // Après 3 secondes, la page de chargement se termine
+    }, 6200);
+  }, []);
+  return <div className="App">{isLoading ? <Loading /> : <Portfolio />}</div>;
 }
 
 export default App;

@@ -455,7 +455,29 @@ option {
   text-wrap-mode: nowrap;
   animation: textAnimation 3s ease-in-out infinite;
 }
-
+.text-animated {
+  animation: textLoadingAnimation 1s ease-in-out infinite;
+}
+@keyframes textLoadingAnimation {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+.loading-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;
+  height: 100vh;
+}
+.handwriting-container {
+  width: fit-content;
+}
 /* .web_des .card-text {
   margin-top: 5%;
 } */
