@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { FaCalendar, FaFile, FaFlag, FaLocationDot } from "react-icons/fa6";
 import im1 from "../assets/img/pngtree-about-me-presentation-landing-header-vector-png-image_11903557.png";
 import im2 from "../assets/img/hand-drawn-flat-design-api-illustration_23-2149365021.avif";
-import im3 from "../assets/img/Web-Design-PNG-Image.png";
+import im3 from "../assets/img/why-we-need-more-women-in-ux-design.jpg";
 import cv from "../assets/pdf/CV-2024.pdf";
 import TechStack from "./TechStack";
 
@@ -42,7 +42,7 @@ const AboutMe = ({ language }) => {
           </p>
           <hr className="pink" />
         </div>
-        <div className="row skills-content">
+        <div className="row skills-content`">
           <div className="col-md-4  dev-web-skill">
             <div className="card shadow-sm">
               <div className="card-body">

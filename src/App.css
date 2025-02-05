@@ -206,7 +206,7 @@ option {
   background-size: cover;
 }
 
-.bg-card::before {
+/* .bg-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -214,7 +214,7 @@ option {
   width: 100%;
   height: 100%;
   background-color: rgba(248, 238, 247, 0.39);
-}
+} */
 .en_avant {
   color: #555050;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -417,7 +417,7 @@ option {
   }
   50% {
     opacity: 1;
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
   100% {
     opacity: 0.1;
@@ -599,8 +599,10 @@ option {
     padding-top: 0% !important;
   }
   .skills-content img {
-    width: 75% !important;
+    margin: 1rem;
+    width: 50% !important;
     border: 1px solid #f3b1d2;
+    box-shadow: 0px 0px 15px #fa9bcaa1;
     object-fit: cover;
   }
   .web_des {
@@ -731,9 +733,35 @@ option {
   .skills-title {
     margin-top: 2%;
   }
-  .dev-web-skill {
+  .skills-content img {
+    margin: 1rem;
+    width: 50% !important;
+    border: 1px solid #f3b1d2;
+    box-shadow: 0px 0px 15px #fa9bcaa1;
+    object-fit: cover;
   }
-  .cont-write-skill {
+  .dev-web-skill .card-body,
+  .cont-write-skill .card-body {
+    border-left: 2px solid #da1879;
+    font-size: 1em;
+    padding-top: 0% !important;
+  }
+  .web_des {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: end !important;
+    text-wrap-mode: wrap;
+    padding-left: 5% !important;
+    height: fit-content;
+  }
+  .dev-web-skill .card,
+  .cont-write-skill .card {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: start !important;
+    text-wrap-mode: wrap;
+    padding-left: 5% !important;
+    height: fit-content;
   }
 }
 
@@ -761,6 +789,37 @@ option {
     padding-left: 0rem;
     padding-right: 0rem;
     height: fit-content;
+  }
+
+  .skills-content img {
+    margin: 1rem;
+    width: 50% !important;
+    border: 1px solid #f3b1d2;
+    box-shadow: 0px 0px 15px #fa9bcaa1;
+    object-fit: cover;
+  }
+  .dev-web-skill .card-body,
+  .cont-write-skill .card-body,
+  .des-web-skill .card-body {
+    border-left: 2px solid #da1879;
+
+    font-size: 1em;
+  }
+  .dev-web-skill .card,
+  .cont-write-skill .card,
+  .des-web-skill .card {
+    border: none !important;
+    box-shadow: none !important;
+    text-align: start !important;
+    text-wrap-mode: wrap;
+    padding-left: 5% !important;
+    height: fit-content;
+  }
+  .dev-web-skill,
+  .cont-write-skill,
+  .des-web-skill {
+    margin-top: 5%;
+    margin-bottom: 0%;
   }
 }
 
