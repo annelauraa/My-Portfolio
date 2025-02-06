@@ -16,7 +16,6 @@ import ProjectsSection from "./ProjectsSection";
 import AboutMe from "./AboutMe";
 import FloatingMenu from "./FloatingMenu";
 import Footer from "./Footer";
-import HandwritingWithPen from "./HandwritingText";
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
   en: "https://flagcdn.com/w40/gb.png", // Drapeau anglais (UK)
@@ -182,13 +181,11 @@ const Portfolio = () => {
             </a>
           </motion.a>
           <motion.a
-            href="#"
+            href="www.linkedin.com/in/laingotsiory-anne-laura-0520a1276"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
-            <a href="#" className="text-dark">
-              <FaLinkedin />
-            </a>
+            <FaLinkedin />
           </motion.a>
           <motion.a
             href="#"
@@ -201,11 +198,11 @@ const Portfolio = () => {
           </motion.a>
 
           <motion.a
-            href="#"
+            href="wa.me/+261332570863"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
-            <a href="wa.me/0261332570863" className="text-dark">
+            <a href="wa.me/+261332570863" target="_blank" className="text-dark">
               <FaWhatsappSquare />
             </a>
           </motion.a>

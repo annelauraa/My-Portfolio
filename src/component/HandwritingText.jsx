@@ -21,7 +21,7 @@ const HandwritingWithPen = ({ text }) => {
       const timeout = setTimeout(() => {
         setDisplayedText((prev) => prev.slice(0, prev.length - 1));
         setIndex(index - 1);
-      }, 100); // Vitesse d'effacement
+      }, 180); // Vitesse d'effacement
       return () => clearTimeout(timeout);
     } else if (index === text.length && !isDeleting) {
       // Attendre quelques secondes avant de commencer l'effacement
@@ -37,7 +37,7 @@ const HandwritingWithPen = ({ text }) => {
 
   return (
     <div className="handwriting-container">
-      <p className="handwriting-text fs-1 text-animated text-align-center">
+      <p className="handwriting-text fs-1 text-align-center text-animated ">
         {displayedText}
       </p>
       {isFinished && (
