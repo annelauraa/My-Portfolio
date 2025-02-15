@@ -143,10 +143,10 @@ const Portfolio = () => {
               text1={translations[language].welcome}
               text2={translations[language].name}
             />
-
+            {/* 
             <p className="hidden description">
               {translations[language].description}
-            </p>
+            </p> */}
             <p className="hidden lead title">{translations[language].title}</p>
 
             <div className="mt-1 button hidden">
