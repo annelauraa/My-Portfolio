@@ -1,16 +1,3 @@
-@font-face {
-  font-family: "Winter-Prime";
-  src: url("./assets/font/WinterPrime.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Adelia";
-  src: url("./assets/font/adelia.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 html {
   font-size: 14px;
 }
@@ -43,7 +30,6 @@ html {
   opacity: 0.15; /* Ajuste l'opacité selon ton besoin */
 }
 .overlay-content {
-  padding-top: 3%;
   position: relative;
   color: rgb(63, 61, 61);
 }
@@ -95,8 +81,7 @@ html {
 }
 
 .text-plus-grand {
-  margin-top: 3%;
-  font-size: 3.5em;
+  font-size: 3em;
   line-height: 1em;
 }
 .profil_image {
@@ -131,7 +116,7 @@ option {
 .nav-link {
   color: #6b6769;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 .home {
   color: #db2c84;
@@ -139,18 +124,17 @@ option {
 .nav-link:hover {
   color: #db2c84;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.03em;
+  font-size: 1.1em;
   text-decoration: underline;
   text-decoration-color: #db2c84;
   text-decoration-style: solid;
   text-decoration-thickness: 3px; /* Épaisseur du soulignement */
   text-underline-offset: 8px;
-  transition: 0.2s;
 }
 .nav-link:visited {
-  color: unset;
+  color: #6b6769;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 500;
+  font-weight: 700;
 }
 .home:visited {
   color: #db2c84;
@@ -169,7 +153,7 @@ option {
 .hire_me_button:hover {
   background-color: #da1879;
   box-shadow: 1px 1px 1px #b40e61;
-  font-size: 1.05em;
+  font-size: 1.1em;
 }
 .hidden {
   opacity: 0; /* Caché au départ */
@@ -398,6 +382,7 @@ option {
   margin-bottom: 5%;
 }
 #home {
+  padding-top: 4rem;
   padding-bottom: 4rem;
   height: fit-content !important;
 }
@@ -494,42 +479,6 @@ option {
 .handwriting-container {
   width: fit-content;
 }
-@keyframes text-bulle-animation {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.bulle-text {
-  background-color: #fcf2f9f8;
-  width: fit-content;
-  padding: 5px;
-  border-radius: 20px;
-  position: fixed;
-  top: 30px;
-  left: 20px;
-  box-shadow: 1px 1px 5px rgba(255, 2, 221, 0.116);
-  animation: text-bulle-animation 10s ease-in-out infinite;
-}
-.yes-no-button {
-  height: fit-content;
-}
-
-.text-collaboration-context {
-  /* font-family: "Adelia"; */
-}
 /* .web_des .card-text {
   margin-top: 5%;
 } */
@@ -543,13 +492,6 @@ option {
     margin: 0 auto;
     padding: 0;
     text-align: center;
-  }
-  .overlay-content {
-    padding-top: 18%;
-  }
-  .bulle-text {
-    top: 80px;
-    left: 5px;
   }
   .bg-card {
     position: relative;
@@ -566,12 +508,20 @@ option {
     padding-right: 0;
     height: fit-content;
   }
-  .nav {
-    z-index: 1;
+  .about-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./assets/img/il_fullxfull.4888297361_pbr0.png") center/fill
+      no-repeat;
+    opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
   }
+
   .card {
     padding: 0 !important;
-    z-index: 0;
   }
 
   .profil_image {
@@ -579,7 +529,7 @@ option {
     width: 17em;
   }
   #home {
-    /* padding-top: 10rem; */
+    padding-top: 10rem;
     display: flex;
     height: fit-content !important;
   }
@@ -614,6 +564,7 @@ option {
   }
 
   .text-plus-grand {
+    text-align: start !important;
     margin-left: 18%;
     margin-right: 10%;
     font-size: 2.5em;

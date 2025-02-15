@@ -6,7 +6,7 @@ const translations = {
         about: "About",
         title: " Web Designer and Developer | Content Writer",
         opt: "Opt for a flexible, friendly but professional collaborations.",
-        hire_me: "Let's Collaborate",
+        hire_me: "Let's collaborate",
         AboutMe: "About me",
         Naissance: "Born on March 3rd, 2002",
         adresse: "Lives in Andohalo-Antananarivo 101, Madagascar",
@@ -38,13 +38,7 @@ const translations = {
         slide_tuto: "Swipe to scroll",
         tech_i_use: "My Technologies and Tools",
         swipe_hint: "Just slide forward or back",
-        thanks: "Thank you for your visit! 😊",
-        need_collaboration_text_0: "Do you need a modern, interactive and performing web site or application?",
-        need_collaboration_text_1: "",
-        need_collaboration_text_2: "",
-        no: "No",
-        yes: "Yes",
-
+        thanks: "Thank you for your visit! 😊"
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -53,7 +47,7 @@ const translations = {
         about: "À propos",
         title: "Designer et Developpeur Web | Créatrice de contenus",
         opt: "Optez pour des collaborations flexibles, amicales mais professionnelles.",
-        hire_me: "Allons collaborer",
+        hire_me: "Allons Collaborer",
         AboutMe: "A propos de moi",
         Naissance: "Née le 03 Mars 2002",
         adresse: "Habite à Andohalo-Antananrivo 101, Madagascar",
@@ -85,12 +79,7 @@ const translations = {
         slide_tuto: "Glisser pour défiler",
         tech_i_use: "Mes Outils et Technologies",
         swipe_hint: "Glisser juste en avant ou en arriere",
-        thanks: "Merci pour votre visite! 😊",
-        need_collaboration_text_0: "Vous avez besoin d'un site ou d'une aplication web moderne, interactif et performant?",
-        need_collaboration_text_1: "Cherchez-vous quelqu'un pour epaissir votre equipe de developpeur lors d'un futur projet?",
-        need_collaboration_text_2: "",
-        no: "Non",
-        yes: "Oui",
+        thanks: "Merci pour votre visite! 😊"
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -99,7 +88,7 @@ const translations = {
         about: "Mombamomba",
         title: "Mpamboatra sy Mpamolavola endrika Tranonkala | Mpandrafitra ati-pejy",
         opt: "Mifidiana fiaraha-miasa malefaka, sariaka fa matihanina.",
-        hire_me: "Andao hiaraha-hiasa",
+        hire_me: "Andao hiara-hiasa",
         AboutMe: "Mahakasika ahy",
         adresse: "Monina ao Andohalo-Antananarivo 101, Madagasikara",
         voir_CV: "Jereo ato ny CV-ko ",
@@ -131,12 +120,7 @@ const translations = {
         slide_tuto: "Akisaho",
         tech_i_use: "Ireo Teknolojia sy kojakoja fampiasako",
         swipe_hint: "Akisaho mandroso na miverina fotsiny",
-        thanks: "Mankasitraka amin'ny fitsidihanao! 😊",
-        need_collaboration_text_0: "Mila tranonkala na Application web maoderina, mahafinaritra sy matanjaka ve ianao?",
-        need_collaboration_text_1: "",
-        need_collaboration_text_2: "",
-        no: "Tsia",
-        yes: "Eny",
+        thanks: "Mankasitraka amin'ny fitsidihanao! 😊"
     },
 };
 
