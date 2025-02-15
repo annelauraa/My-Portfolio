@@ -41,7 +41,10 @@ body {
 ::-webkit-scrollbar-vertical {
   width: 12px; /* Largeur de la barre verticale */
 }
-
+* {
+  scrollbar-width: thin; /* "auto", "thin" ou "none" */
+  scrollbar-color: #fa51a6 #ffffff; /* Couleur du pouce et couleur de la piste */
+}
 @media (max-width: 767px) {
   body {
     padding: 0 !important;

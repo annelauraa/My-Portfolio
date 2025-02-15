@@ -16,6 +16,14 @@ import translations from "../translations";
 import AboutMe from "./AboutMe";
 import FloatingMenu from "./FloatingMenu";
 import Footer from "./Footer";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import pic from "../assets/img/il_fullxfull.4888297361_pbr0.png";
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
   en: "https://flagcdn.com/w40/gb.png", // Drapeau anglais (UK)
@@ -26,6 +34,18 @@ const Portfolio = () => {
   const [language, setLanguage] = useState("en"); // Langue par défaut
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [showCollaborationContext, setShowCollaborationContext] =
+    useState(false);
+
+  const active_collaboration_context_question = () => {
+    if (!showCollaborationContext) {
+      setShowCollaborationContext(true);
+      setTimeout(() => {
+        setShowCollaborationContext(false); // Après 10 secondes,
+      }, 10000);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -68,97 +88,213 @@ const Portfolio = () => {
 
   return (
     <div className="bg-light text-dark min-vh-100 mx-3 rounded">
-      <motion.header className="py-4 justify-content-between  bg-light shadow-sm header">
-        {/* Barre de progression */}
-        <motion.div
-          className="position-fixed top-0 start-0 bg-laingo"
-          style={{ height: "4px", width: `${scrollProgress}%`, zIndex: 1000 }}
-          initial={{ width: 0 }}
-          animate={{ width: `${scrollProgress}%` }}
-        />
-        <h1 className="fs-3 fw-bold">
-          <span className="pink">Laingo</span> Tsiory
-        </h1>
-        {!isMobile && (
-          <nav className="text-align-center mb-d-none">
-            <ul className="nav">
-              <li className="nav-item">
-                <a href="#home" className="nav-link home ">
-                  {translations[language].home}
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#about" className="nav-link ">
-                  {translations[language].about}
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#projects" className="nav-link ">
-                  {translations[language].projects}
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="#contact" className="nav-link ">
-                  {translations[language].contact}
-                </a>
-              </li>
-            </ul>
-          </nav>
-        )}
-        {/* Sélecteur de langue */}
-        {!isMobile && (
-          <div className="select-lang-container mb-d-none align-items-center">
-            <img src={flags[language]} alt={language} className="flag" />
-            <select
-              className="form-select w-auto "
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              name="Language"
-            >
-              <option value="fr">{translations[language].fr}</option>
-              <option value="en">{translations[language].en}</option>
-              <option value="mg">{translations[language].mg}</option>
-            </select>
-          </div>
-        )}
-
-        {isMobile && (
-          <FloatingMenu
-            language={language}
-            activeSection={activeSection}
-            onLanguageChange={setLanguage}
-          />
-        )}
-      </motion.header>
       <motion.section id="home" className="text-center  about-section">
+        <motion.header className="py-4 justify-content-between  bg-light shadow-sm header">
+          {/* Barre de progression */}
+          <motion.div
+            className="position-fixed top-0 start-0 bg-laingo"
+            style={{ height: "4px", width: `${scrollProgress}%`, zIndex: 1000 }}
+            initial={{ width: 0 }}
+            animate={{ width: `${scrollProgress}%` }}
+          />
+          <h1 className="fs-3 fw-bold">
+            <span className="pink">Laingo</span> Tsiory
+          </h1>
+          {!isMobile && (
+            <nav className="text-align-center mb-d-none">
+              <ul className="nav">
+                <li className="nav-item">
+                  <a href="#home" className="nav-link home ">
+                    {translations[language].home}
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#about" className="nav-link ">
+                    {translations[language].about}
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="/projects" className="nav-link ">
+                    {translations[language].projects}
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="#/Contact" className="nav-link ">
+                    {translations[language].contact}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          )}
+          {/* Sélecteur de langue */}
+          {!isMobile && (
+            <div className="select-lang-container mb-d-none align-items-center">
+              <img src={flags[language]} alt={language} className="flag" />
+              <select
+                className="form-select w-auto "
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                name="Language"
+              >
+                <option value="fr">{translations[language].fr}</option>
+                <option value="en">{translations[language].en}</option>
+                <option value="mg">{translations[language].mg}</option>
+              </select>
+            </div>
+          )}
+
+          {isMobile && (
+            <FloatingMenu
+              language={language}
+              activeSection={activeSection}
+              onLanguageChange={setLanguage}
+            />
+          )}
+        </motion.header>
         <div>
           {/* <div className="backdrop-about-section"></div> */}
           <div className=" overlay-content">
-            <img
-              src={Profil}
-              className="rounded-circle profil_image"
-              alt="..."
-            />
+            {(
+              <img
+                src={Profil}
+                className="rounded-circle profil_image"
+                alt="..."
+              />
+            ) || <Skeleton className="rounded-circle profil_image" />}
             <TypingEffect
               text1={translations[language].welcome}
               text2={translations[language].name}
+              className="text-plus-grand"
             />
 
-            <p className="hidden description">
+            {/* <p className="hidden description">
               {translations[language].description}
-            </p>
+            </p> */}
             <p className="hidden lead title">{translations[language].title}</p>
 
-            <div className="mt-1 button hidden">
+            <div className="mt-5 button hidden">
               {/* <p className="lead pink opt">{translations[language].opt}</p> */}
-              <button className="hire_me_button">
+              <a
+                href="#collaboration_context"
+                className="hire_me_button text-decoration-none "
+                onClick={active_collaboration_context_question}
+              >
                 {translations[language].hire_me}
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </motion.section>
-      <motion.section id=" about">
+      <motion.section id="collaboration_context">
+        <div className="w-75 m-auto mt-5  pt-5">
+          {showCollaborationContext && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              transition={{ duration: 5 }}
+              className="flex d-flex align-items-center justify-items-center bulle-text"
+            >
+              <img src={pic} alt="" width={50} height={50} />
+              <div className="">
+                <TypingEffect
+                  text1="Alors de quoi avez vous besoin? "
+                  text2=""
+                  title={false}
+                />
+              </div>
+            </motion.div>
+          )}
+
+          <Swiper
+            slidesPerView={1}
+            loop={true}
+            modules={[Navigation]}
+            className="mySwiper"
+            autoplay={true}
+          >
+            <SwiperSlide>
+              <motion.div
+                className="m-auto shadow "
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="row h-50 p-5">
+                  <div className="col-6">
+                    <p className="fs-3 p-3 text-start text-collaboration-context">
+                      {translations[language].need_collaboration_text_0}
+                    </p>
+                    <div className="flex d-flex align-items-start p-3">
+                      <button className="hire_me_button m-1">
+                        {translations[language].yes}
+                      </button>
+                      <button className="hire_me_button m-1">
+                        {translations[language].no}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-6"></div>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <motion.div
+                className="m-auto shadow"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="row h-50 p-5 ">
+                  <div className="col-6">
+                    <p className="fs-3 p-3 text-start">
+                      {translations[language].need_collaboration_text_1}
+                    </p>
+                    <div className="flex d-flex align-items-start p-3">
+                      <button className="hire_me_button m-1">
+                        {translations[language].yes}
+                      </button>
+                      <button className="hire_me_button m-1">
+                        {translations[language].no}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-6"></div>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <motion.div
+                className="m-auto shadow "
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="row h-50 p-5">
+                  <div className="col-6">
+                    <p className="fs-3 p-3 text-start">
+                      {translations[language].need_collaboration_text_2}
+                    </p>
+                    <div className="flex d-flex align-items-start p-3">
+                      <button className="hire_me_button m-1">
+                        {translations[language].yes}
+                      </button>
+                      <button className="hire_me_button m-1">
+                        {translations[language].no}
+                      </button>
+                    </div>
+                  </div>
+                  <div className="col-6"></div>
+                </div>
+              </motion.div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </motion.section>
+      <motion.section id="about">
         <AboutMe language={language} />
       </motion.section>
       {/* <ProjectsSection
