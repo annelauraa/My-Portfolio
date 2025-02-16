@@ -58,7 +58,9 @@ const translations = {
         cancel: "Cancel",
         enjoy_visit: "Thank you for visiting then!",
         thank_you_visit: "Hope You'll enjoy it.",
-        contact_title: "Please send me a message so that we can start talking about this project."
+        contact_title: "Please send me a message so that we can start talking about this project.",
+        success_notification: "Your message has been successfully sent!",
+        error_notification: "There was an error while sending your message, Please try again."
     },
     fr: {
         welcome: "Bienvenue sur mon Portfolio,",
@@ -119,7 +121,9 @@ const translations = {
         cancel: "Annuler",
         enjoy_visit: "Merci pour votre visite alors!",
         thank_you_visit: "J'espere qu'elle vous fera plaisir.",
-        contact_title: "S'il vous plait envoyez moi un message pour qu'on commence a parler de ce projet."
+        contact_title: "S'il vous plait envoyez moi un message pour qu'on commence a parler de ce projet.",
+        success_notification: "Votre message a été bien envoyé!",
+        error_notification: "Une erreur s'est produite lors de l'envoie de votre message, Veuillez reéssayer"
     },
     mg: {
         welcome: "Tongasoa ato amin'ny Portfolio-ko,",
@@ -179,7 +183,10 @@ const translations = {
         sender_name: "Anarana",
         cancel: "Ajanona",
         enjoy_visit: "Mankasitraka amin'ny fitsidihanao ary!",
-        thank_you_visit: "Antenaiko mba hahafinaritra izany."
+        thank_you_visit: "Antenaiko mba hahafinaritra izany.",
+        contact_title: "Andefaso hafatra ary aho, hahafahantsika miresaka an'izany tetikasanao izany.",
+        success_notification: "Lasa soa aman-tsara ny hafatrao!",
+        error_notification: "Nisy tsy fahatomombanana ny fandefasana ny hafatrao, azafady avereno."
     },
 };
 

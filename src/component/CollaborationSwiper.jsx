@@ -69,14 +69,14 @@ const CollaborationSwiper = ({ language }) => {
       })
       .then(
         () => {
-          notify("success", "Your message has been successfully sent!");
+          notify("success", translations[language].success_notification);
           setMessageSent(true);
           const collaborate_button = document.querySelector(".hire_me_button");
           collaborate_button.classList.add("d-none");
         },
         (error) => {
           console.error("FAILED...", error.text);
-          notify("error", "Message could not be sent! Please retry.");
+          notify("error", translations[language].error_notification);
         }
       );
   };
