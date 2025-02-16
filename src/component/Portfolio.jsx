@@ -234,38 +234,36 @@ const Portfolio = () => {
         <p>{translations[language].collaboration}</p>
         <div className="d-flex justify-content-center gap-3 mt-3">
           <motion.a
-            href="#"
+            href="https://github.com/annelauraa"
+            target="_blank"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
-            <a href="#" className="text-dark">
-              <FaGithub />
-            </a>
+            <FaGithub />
           </motion.a>
           <motion.a
-            href="www.linkedin.com/in/laingotsiory-anne-laura-0520a1276"
+            href="https://www.linkedin.com/in/laingotsiory-anne-laura-0520a1276"
+            target="_blank"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
             <FaLinkedin />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://web.facebook.com/tsiory.laura"
+            target="_blank"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
-            <a href="#" className="text-dark">
-              <FaFacebook />
-            </a>
+            <FaFacebook />
           </motion.a>
           <motion.a
-            href="wa.me/+261332570863"
+            href="https://wa.me/+261332570863"
+            target="_blank"
             className="fs-3 text-dark"
             whileHover={{ scale: 1.2 }}
           >
-            <a href="wa.me/+261332570863" target="_blank" className="text-dark">
-              <FaWhatsappSquare />
-            </a>
+            <FaWhatsappSquare />
           </motion.a>
           <motion.a
             href="#"
