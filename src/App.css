@@ -1,7 +1,22 @@
+@font-face {
+  font-family: "magic";
+  src: url("./assets/font/magic\ dafont.otf");
+
+  font-family: "billdreams";
+  src: url("./assets/font/BillionDreams_PERSONAL.ttf");
+}
+.magic {
+  font-family: "magic";
+}
+.billdreams {
+  font-family: "billdreams";
+  font-size: 3em !important;
+}
 html {
   font-size: 14px;
 }
-
+.cover {
+}
 .about-section {
   position: relative;
   width: 100%;
@@ -10,15 +25,6 @@ html {
   z-index: 0;
 }
 
-.backdrop-about-section {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(245, 242, 239, 0.7);
-  z-index: 0;
-}
 .about-section::before {
   content: "";
   position: absolute;
@@ -141,7 +147,7 @@ option {
 }
 .hire_me_button {
   padding: 1%;
-  border-radius: 3px;
+  border-radius: 6px;
   width: 15%;
   object-fit: fill;
   background-color: #df1479;
@@ -152,8 +158,9 @@ option {
 }
 .hire_me_button:hover {
   background-color: #da1879;
+  color: white;
   box-shadow: 1px 1px 1px #b40e61;
-  font-size: 1.1em;
+  font-size: 1.05em;
 }
 .hidden {
   opacity: 0; /* Caché au départ */
@@ -395,6 +402,12 @@ option {
 .mySwiper {
 }
 
+textarea:focus,
+input:focus {
+  box-shadow: none !important;
+  border: 1px solid #db2c84a2 !important;
+}
+
 /* Animation horizontale pour l'icône de la main */
 @keyframes handSlideHorizontal {
   0% {
@@ -479,6 +492,98 @@ option {
 .handwriting-container {
   width: fit-content;
 }
+.group-button {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+.group-button .yes-button {
+  padding: 0.4em 2em 0.4em 2em;
+  background-color: #da1879;
+  color: white;
+  width: fit-content;
+  border: none;
+}
+.group-button .yes-button:hover {
+  background-color: #cc096a;
+}
+.group-button .no-button {
+  padding: 0.4em 1em 0.4em 1em;
+  background-color: white;
+  color: #da1879;
+  width: fit-content;
+  border: 1px solid #da1879;
+}
+.group-button .no-button:hover {
+  background-color: #cc096a;
+  color: white;
+}
+.group-button-reversed .yes-button {
+  padding: 0.4em 1em 0.4em 1em;
+  background-color: white;
+  color: #da1879;
+  width: fit-content;
+  border: 1px solid #da1879;
+}
+.group-button-reversed .yes-button:hover {
+  padding: 0.4em 1em 0.4em 1em;
+  background-color: #da1879;
+  color: white;
+  width: fit-content;
+  border: none;
+  border: 1px solid #da1879;
+}
+.cover1 {
+  background-image: url("./assets/img/create-any-website-with-powerful-website-builder-website-builder.jpg");
+  background-size: cover;
+}
+.cover2 {
+  background-image: url("./assets/img/web-team.png");
+  background-size: cover;
+}
+.cover3 {
+  background-image: url("./assets/img/web-designers-bangalore.jpg");
+  background-size: cover;
+}
+.purple {
+  color: #7e61e9;
+}
+.text-bulle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #f8eff4;
+  padding: 0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px #d3ced1;
+  animation: textBulleAnimation 10s;
+}
+@keyframes textBulleAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.swiper-pagination-bullet {
+  background-color: #da1577 !important;
+  pointer-events: none;
+}
+.contact-form {
+  width: 50%;
+  margin: auto;
+}
 /* .web_des .card-text {
   margin-top: 5%;
 } */
@@ -508,7 +613,7 @@ option {
     padding-right: 0;
     height: fit-content;
   }
-  .about-section::after {
+  .about-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -517,7 +622,7 @@ option {
     height: 100%;
     background: url("./assets/img/il_fullxfull.4888297361_pbr0.png") center/fill
       no-repeat;
-    opacity: 0.9; /* Ajuste l'opacité selon ton besoin */
+    opacity: 0.18; /* Ajuste l'opacité selon ton besoin */
   }
 
   .card {
@@ -656,6 +761,9 @@ option {
     padding: 1%;
     color: #555050;
   }
+  .contact-form {
+    width: 100%;
+  }
 }
 .description {
   font-size: 2em;
@@ -676,6 +784,9 @@ option {
     padding-left: 0;
     padding-bottom: 0;
     height: fit-content;
+  }
+  .contact-form {
+    width: 100%;
   }
   .border-left-pink {
     border-left: 5px solid#db2c84;
@@ -743,6 +854,7 @@ option {
     font-size: 1em;
   }
   .hire_me_button {
+    margin-top: 2em;
     text-align: start;
     padding: 0.8em;
     width: fit-content;

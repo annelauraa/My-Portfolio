@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const TypingEffect = ({ text1, text2, highlightWord }) => {
+const TypingEffect = ({ text1, text2, highlightWord, title }) => {
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -40,11 +40,20 @@ const TypingEffect = ({ text1, text2, highlightWord }) => {
   }, [text1, text2, highlightWord]);
 
   return (
-    <div className="container mt-5">
-      <p
-        className="text-center text-plus-grand"
-        dangerouslySetInnerHTML={{ __html: text }}
-      ></p>
+    <div className="container ">
+      {title && (
+        <p
+          className="text-center mt-5 text-plus-grand"
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></p>
+      )}
+
+      {!title && (
+        <p
+          className="text-center pink"
+          dangerouslySetInnerHTML={{ __html: text }}
+        ></p>
+      )}
     </div>
   );
 };
@@ -54,6 +63,7 @@ TypingEffect.propTypes = {
   text1: PropTypes.string,
   text2: PropTypes.string,
   highlightWord: PropTypes.string,
+  title: PropTypes.bool,
 };
 
 // Valeurs par défaut
@@ -61,6 +71,7 @@ TypingEffect.defaultProps = {
   text1: "Bienvenue sur mon Portfolio,",
   text2: " Je suis Laingo!",
   highlightWord: "Laingo", // Mot mis en valeur par défaut
+  title: true,
 };
 
 export default TypingEffect;
