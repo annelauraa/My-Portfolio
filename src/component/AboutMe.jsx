@@ -9,7 +9,7 @@ import cv from "../assets/pdf/CV-2024.pdf";
 import TechStack from "./TechStack";
 
 const fadeInVariants = {
-  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  hidden: { opacity: 0.5, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
   visible: {
     opacity: 1,
     scale: 1,
@@ -24,13 +24,7 @@ const AboutMe = ({ language }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <motion.section
-        id="about"
-        className="py-5 bg-light"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.5 }}
-      >
+      <motion.section id="about" className=" bg-light">
         <div className="container about-me-container">
           <div className="text-center container">
             <div className="">
@@ -104,7 +98,7 @@ const AboutMe = ({ language }) => {
               variants={fadeInVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.8 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               <div className=" dev-web-skill">
                 <div className="card shadow-sm">
@@ -125,7 +119,7 @@ const AboutMe = ({ language }) => {
               variants={fadeInVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.7 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               <div className=" des-web-skill">
                 <div className="card shadow-sm">
@@ -149,7 +143,7 @@ const AboutMe = ({ language }) => {
               variants={fadeInVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.6 }}
+              viewport={{ once: false, amount: 0.5 }}
             >
               <div className="cont-write-skill">
                 <div className="card shadow-sm">

@@ -32,7 +32,7 @@ import {
 import ExpandText from "./ExpandText";
 
 const fadeInVariants = {
-  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  hidden: { opacity: 0.2, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
   visible: {
     opacity: 1,
     scale: 1,
@@ -402,7 +402,14 @@ const Portfolio = () => {
       <FAQ language={language} />
       {/*End FAQ */}
       {/* Contact */}
-      <motion.section id="contact" className=" px-5 text-center ">
+      <motion.section
+        id="contact"
+        className=" px-5 text-center "
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <h2 className="fs-3 fw-bold">{translations[language].contactMe}</h2>
         <p>{translations[language].collaboration}</p>
         <div className="d-flex justify-content-center gap-3 mt-3">

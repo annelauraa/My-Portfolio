@@ -11,6 +11,16 @@ import emailjs from "@emailjs/browser";
 import cover1 from "../assets/img/create-any-website-with-powerful-website-builder-website-builder.jpg";
 import cover2 from "../assets/img/web-team.png";
 import cover3 from "../assets/img/web-designers-bangalore.jpg";
+import { motion } from "framer-motion";
+
+const fadeInVariants = {
+  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.5, ease: "easeInOut" }, // Animation fluide
+  },
+};
 
 const notify = (type, message) => {
   if (type === "error") {
@@ -95,16 +105,28 @@ const CollaborationSwiper = ({ language }) => {
 
   if (messageSent) {
     return (
-      <div className="container p-5 text-center">
+      <motion.div
+        className="container p-5 text-center"
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <h1>{translations[language].message_sent1}</h1>
         <h5>{translations[language].message_sent2}</h5>
-      </div>
+      </motion.div>
     );
   }
 
   if (showForm) {
     return (
-      <div className="container p-5 text-start">
+      <motion.div
+        className="container p-5 text-start"
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <form ref={form} onSubmit={handleSubmit} className="contact-form">
           <h4>{translations[language].contact_title}</h4>
           <div className="mt-5 mb-3">
@@ -151,23 +173,34 @@ const CollaborationSwiper = ({ language }) => {
           </div>
         </form>
         {/* <ToastContainer /> */}
-      </div>
+      </motion.div>
     );
   }
 
   if (justVisiting) {
     return (
-      <div className="container p-5 text-center">
+      <motion.div
+        className="container p-5 text-center"
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <h1>{translations[language].enjoy_visit}</h1>
         <p className="pink billdreams">
           ~ {translations[language].thank_you_visit} ~
         </p>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <>
+    <motion.div
+      variants={fadeInVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+    >
       {language === "en" && (
         <p className="fs-2 text-start  p-4 m-5 w-75 m-auto pink">
           Now, tell me <span className="fw-bold">what YOU need</span> too!
@@ -285,7 +318,7 @@ const CollaborationSwiper = ({ language }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </motion.div>
   );
 };
 

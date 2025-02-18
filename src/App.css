@@ -50,7 +50,6 @@ html {
 .faq {
   width: 75%;
   margin: auto;
-  padding: 10em 0em 10em 0em;
 }
 .faq-question {
   background-color: #ffffff !important;
@@ -71,7 +70,7 @@ html {
   border: 1px solid #da1879;
 }
 #projects {
-  margin: 5em 0em 5em 0em !important;
+  margin: 1em 0em 0em 0em !important;
   height: fit-content;
   position: relative;
   padding: 2em;
@@ -395,7 +394,7 @@ option {
   transition: transform 0.3s ease-in-out;
 }
 .project-card:hover {
-  background-color: #141414 !important;
+  background-color: #141414e3 !important;
   box-shadow: 1px 1px 10px #464344 !important;
   cursor: pointer;
   transform: scale(1.05);
@@ -826,7 +825,6 @@ input:focus {
   }
   .faq {
     width: 85% !important;
-    padding: 10em 0em 10em 0em;
   }
   .contact-form {
     width: 100%;

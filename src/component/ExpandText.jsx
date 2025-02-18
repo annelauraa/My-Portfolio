@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import translations from "../translations";
+
 const ExpandText = ({ text, language }) => {
   const [expanded, setExpanded] = useState(false);
 

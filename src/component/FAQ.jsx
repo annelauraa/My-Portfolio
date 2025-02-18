@@ -1,6 +1,15 @@
 import PropTypes from "prop-types";
 import translations from "../translations";
+import { motion } from "framer-motion";
 
+const fadeInVariants = {
+  hidden: { opacity: 0.5, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.5, ease: "easeInOut" }, // Animation fluide
+  },
+};
 const FAQ = ({ language }) => {
   let faq = () => {
     let faqs = [];
@@ -14,7 +23,13 @@ const FAQ = ({ language }) => {
   };
   const faqs = faq();
   return (
-    <div className="container faq text-start">
+    <motion.div
+      className="container faq py-5 text-start"
+      variants={fadeInVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.8 }}
+    >
       <h2 className="faq-title text-secondary">FAQ</h2>
       <hr className="text-secondary mb-4" />
       <div className="accordion" id="accordionExample">
@@ -43,7 +58,7 @@ const FAQ = ({ language }) => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <h6>{faq.answer}</h6>
+                <h6 className="fs-bold">{faq.answer}</h6>
                 {index === 4 && (
                   <div>
                     <p>{translations[language].step1}</p>
@@ -58,7 +73,7 @@ const FAQ = ({ language }) => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

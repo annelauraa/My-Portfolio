@@ -10,11 +10,11 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 const fadeInVariants = {
-  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  hidden: { opacity: 0.5, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 1.5, ease: "easeInOut" }, // Animation fluide
+    transition: { duration: 1.1, ease: "easeInOut" }, // Animation fluide
   },
 };
 const ProjectsSection = ({ translations, language }) => {
@@ -44,8 +44,12 @@ const ProjectsSection = ({ translations, language }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeInOut" }}
     >
-      <div className="backdrop"></div>
-      <div>
+      <motion.div
+        variants={fadeInVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <h2 className="fs-1 fw-bold p-5 magic pink">
           {translations[language]?.recentProjects}
         </h2>
@@ -91,7 +95,7 @@ const ProjectsSection = ({ translations, language }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

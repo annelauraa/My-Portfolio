@@ -74,7 +74,7 @@ const technologies = [
 
 export default function TechStack({ language }) {
   return (
-    <div className="container text-center mt-5">
+    <div className="container text-center mt-3">
       <p className="lead fs-2 w-100 pink skills-title">
         - {translations[language].tech_i_use} -
       </p>
