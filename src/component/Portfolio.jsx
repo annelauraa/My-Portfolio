@@ -6,12 +6,18 @@ import translations from "../translations";
 import TypingEffect from "./TypingEffect";
 import CollaborationSwiper from "./CollaborationSwiper";
 import AboutMe from "./AboutMe";
+import ProjectsSection from "./ProjectsSection";
 import FloatingMenu from "./FloatingMenu";
 import Footer from "./Footer";
+import FAQ from "./FAQ";
+import { ToastContainer } from "react-toastify";
 
 //image
 import Profil from "../assets/img/il_fullxfull.4888297361_pbr0.webp";
 import Profil_text_bulle from "../assets/img/il_fullxfull.4888297361_pbr0.png";
+import im1 from "../assets/img/im1.jpg";
+import im2 from "../assets/img/im2.jpg";
+import im3 from "../assets/img/im3.jpg";
 // CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -23,7 +29,16 @@ import {
   FaFacebook,
   FaWhatsappSquare,
 } from "react-icons/fa";
-import { ToastContainer } from "react-toastify";
+import ExpandText from "./ExpandText";
+
+const fadeInVariants = {
+  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1.2, ease: "easeInOut" }, // Animation fluide
+  },
+};
 
 const flags = {
   fr: "https://flagcdn.com/w40/fr.png",
@@ -37,6 +52,23 @@ const Portfolio = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [showTextBulle, setShowTextBulle] = useState(false);
+  const slides = [
+    {
+      title: translations[language].presentation_title1,
+      text: translations[language].presentation_content1,
+      img: im2,
+    },
+    {
+      title: translations[language].presentation_title2,
+      text: translations[language].presentation_content2,
+      img: im3,
+    },
+    {
+      title: translations[language].presentation_title3,
+      text: translations[language].presentation_content3,
+      img: im1,
+    },
+  ];
 
   //Fonction pour gérer le scroll bar
   useEffect(() => {
@@ -102,9 +134,9 @@ const Portfolio = () => {
         {/* End Barre de progression */}
 
         {/* Logo */}
-        <h1 className="fs-3 fw-bold">
+        <motion.h1 className="fs-3 fw-bold logo">
           <span className="pink">Laingo</span> Tsiory
-        </h1>
+        </motion.h1>
         {/* End Logo */}
 
         {/* Les liens de navigations : cas des ecrans Desktop */}
@@ -112,7 +144,7 @@ const Portfolio = () => {
           <nav className="text-align-center mb-d-none">
             <ul className="nav">
               <li className="nav-item">
-                <a href="#home" className="nav-link home ">
+                <a href="#" className="nav-link home ">
                   {translations[language].home}
                 </a>
               </li>
@@ -165,23 +197,54 @@ const Portfolio = () => {
         {/* End du menu flottant : cas des ecrans mobiles */}
       </motion.header>
       {/* End Navbar */}
-
       {/* Home */}
       <motion.section id="home" className="text-center  about-section">
         <div className=" overlay-content">
           {/* Profil picture */}
-          <img src={Profil} className="rounded-circle profil_image" alt="..." />
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <img
+              src={Profil}
+              className="rounded-circle profil_image"
+              alt="..."
+            />
+          </motion.div>
           {/* End Profil picture */}
 
           {/* Texte de bienvenue */}
-          <TypingEffect
-            text1={translations[language].welcome}
-            text2={translations[language].name}
-          />
+          <motion.div
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            <TypingEffect
+              text1={translations[language].welcome}
+              text2={translations[language].name}
+            />
+          </motion.div>
           {/* End Texte de bienvenue */}
 
-          <p className="hidden lead title">{translations[language].title}</p>
-          <div className="mt-4 button hidden">
+          <motion.p
+            className="hidden lead title"
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            {translations[language].title}
+          </motion.p>
+          <motion.div
+            className="mt-4 button hidden"
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+          >
             <a
               href="#collaboration-context"
               onClick={showCollaborationContext}
@@ -189,18 +252,126 @@ const Portfolio = () => {
             >
               {translations[language].hire_me}
             </a>
-          </div>
+          </motion.div>
         </div>
       </motion.section>
-
+      {/* 
+      <div className="pink-bar m-auto text-light fw-bold "></div> */}
       {/* End Home */}
+      {/* Presentation des services */}
+      {!isMobile && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="container py-5 my-5"
+        >
+          {slides.map((slide, index) => (
+            <>
+              <motion.div
+                key={index}
+                variants={fadeInVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                className="text-center p-4 bg-light flex d-flex justify-content-center align-content-center h-auto w-75 m-auto my-5"
+              >
+                <div className="row text-start">
+                  {index === 1 && (
+                    <div className="col-5 align-items-center justify-content-center px-2">
+                      <img
+                        src={slide.img}
+                        alt="Illustration"
+                        className="img-fluid rounded m-3" // Bootstrap responsive image
+                        style={{ maxHeight: "300px", objectFit: "cover" }}
+                      />
+                    </div>
+                  )}
+                  <div className="col-7 align-items-center justify-content-center p-5 ">
+                    <h1 className="fs-1  mb-4 fw-bold  justify-items-center">
+                      {slide.title}
+                    </h1>
+                    <ExpandText text={slide.text} language={language} />
+                    {/* <button className="hire_me_button w-50 p-2">
+                      {language === "fr" && "Contactez-moi maintenant"}
+                      {language === "en" && "Contact me now"}
+                      {language === "mg" && "Mifandraisa amiko"}
+                    </button> */}
+                  </div>
 
+                  {index !== 1 && (
+                    <div className="col-5 align-items-center justify-content-center">
+                      <img
+                        src={slide.img}
+                        alt="Illustration"
+                        className="img-fluid rounded m-3" // Bootstrap responsive image
+                        style={{ maxHeight: "300px", objectFit: "cover" }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            </>
+          ))}
+        </motion.div>
+      )}
+      {isMobile && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="container py-5 my-5"
+        >
+          {slides.map((slide, index) => (
+            <>
+              <motion.div
+                key={index}
+                variants={fadeInVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                className="text-center p-5 bg-light flex d-flex justify-content-center align-content-center h-auto w-100 m-auto my-5"
+              >
+                <div className={index === 1 ? `text-center` : `text-start`}>
+                  <div className=" align-items-center justify-content-center ">
+                    <h1 className="fs-1 mb-4 fw-bold  justify-items-center">
+                      {slide.title}
+                    </h1>
+                    <ExpandText text={slide.text} language={language} />
+                    {/* <button className="hire_me_button w-50 p-2">
+                      {language === "fr" && "Contactez-moi maintenant"}
+                      {language === "en" && "Contact me now"}
+                      {language === "mg" && "Mifandraisa amiko"}
+                    </button> */}
+                    <div className=" align-items-center justify-content-center">
+                      <img
+                        src={slide.img}
+                        alt="Illustration"
+                        className="img-fluid rounded m-3" // Bootstrap responsive image
+                        style={{ maxHeight: "300px", objectFit: "cover" }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          ))}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.5 }}
+          ></motion.div>
+        </motion.div>
+      )}
+      {/* End Presentation des services */}
       {/* About */}
       <motion.section id=" about">
         <AboutMe language={language} />
       </motion.section>
       {/* End About */}
-
+      {/* Projects */}
+      <ProjectsSection translations={translations} language={language} />
+      {/* End Projects */}
       {/* Collaboration context */}
       <motion.section id="collaboration-context" className="mt-5 pt-5">
         <motion.div>
@@ -227,7 +398,9 @@ const Portfolio = () => {
         </motion.div>
       </motion.section>
       {/*End Collaboration context */}
-
+      {/* FAQ */}
+      <FAQ language={language} />
+      {/*End FAQ */}
       {/* Contact */}
       <motion.section id="contact" className=" px-5 text-center ">
         <h2 className="fs-3 fw-bold">{translations[language].contactMe}</h2>
@@ -277,11 +450,9 @@ const Portfolio = () => {
         </div>
       </motion.section>
       {/* End Contact */}
-
       {/* Footer */}
       <Footer />
       {/* End Footer */}
-
       {/* Le menu flottant */}
       {!isMobile && (
         <FloatingMenu

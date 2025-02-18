@@ -119,7 +119,10 @@ const FloatingMenu = ({ language, activeSection, onLanguageChange }) => {
                 key={item.id}
                 className={activeSection === item.id ? "active" : ""}
               >
-                <a href={`#${item.id}`} onClick={() => setIsOpen(false)}>
+                <a
+                  href={item.id !== "home" ? `#${item.id}` : `#`}
+                  onClick={() => setIsOpen(false)}
+                >
                   {item.icon} {item.label}
                 </a>
               </li>

@@ -168,6 +168,23 @@ const CollaborationSwiper = ({ language }) => {
 
   return (
     <>
+      {language === "en" && (
+        <p className="fs-2 text-start  p-4 m-5 w-75 m-auto pink">
+          Now, tell me <span className="fw-bold">what YOU need</span> too!
+        </p>
+      )}
+      {language === "fr" && (
+        <p className="fs-2 text-start  p-4 m-5 w-75 m-auto pink">
+          Maintenant, dites-moi{" "}
+          <span className="fw-bold">de quoi VOUS avez</span> aussi{" "}
+          <span className="fw-bold">besoin</span>!
+        </p>
+      )}
+      {language === "mg" && (
+        <p className="fs-2 text-start  p-4 m-5 w-75 m-auto pink">
+          Zao ary, teneno ahy <span className="fw-bold">izay ILAINAO</span> koa!
+        </p>
+      )}
       <Swiper
         ref={swiperRef}
         modules={[Navigation, Pagination]}
@@ -180,7 +197,7 @@ const CollaborationSwiper = ({ language }) => {
         {[1, 2, 3].map((num) => (
           <SwiperSlide key={num}>
             {!isMobile && (
-              <div className="row text-start p-5 m-5 w-75 m-auto">
+              <div className="row text-start p-5 m-5 w-75 m-auto shadow">
                 <div className="col-5">
                   <h1 className="billdreams fs-1">
                     {translations[language][`what_do_you_need_title${num}`]} ~
@@ -194,14 +211,17 @@ const CollaborationSwiper = ({ language }) => {
                         className="shadow-sm yes-button"
                         onClick={handleYesClick}
                       >
-                        {translations[language].yes}
+                        {num !== 3 && <>{translations[language].yes}</>}
+                        {num === 3 && <>OK</>}
                       </button>
-                      <button
-                        className="shadow-sm no-button"
-                        onClick={handleNextSlide}
-                      >
-                        {translations[language].no}
-                      </button>
+                      {num !== 3 && (
+                        <button
+                          className="shadow-sm no-button"
+                          onClick={handleNextSlide}
+                        >
+                          {translations[language].no}
+                        </button>
+                      )}
                     </div>
                     <div className="mt-2">
                       <a
@@ -236,14 +256,17 @@ const CollaborationSwiper = ({ language }) => {
                         className="shadow-sm yes-button"
                         onClick={handleYesClick}
                       >
-                        {translations[language].yes}
+                        {num !== 3 && <>{translations[language].yes}</>}
+                        {num === 3 && <>OK</>}
                       </button>
-                      <button
-                        className="shadow-sm no-button"
-                        onClick={handleNextSlide}
-                      >
-                        {translations[language].no}
-                      </button>
+                      {num !== 3 && (
+                        <button
+                          className="shadow-sm no-button"
+                          onClick={handleNextSlide}
+                        >
+                          {translations[language].no}
+                        </button>
+                      )}
                     </div>
                     <div className="mt-2">
                       <a

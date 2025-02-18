@@ -1,9 +1,41 @@
 @font-face {
   font-family: "magic";
   src: url("./assets/font/magic\ dafont.otf");
+}
 
+@font-face {
+  font-family: "autography";
+  src: url("./assets/font/Autography.otf");
+}
+@font-face {
+  font-family: "paul_jackson";
+  src: url("./assets/font/Paul\ Jackson_personal\ use.ttf");
+}
+@font-face {
   font-family: "billdreams";
   src: url("./assets/font/BillionDreams_PERSONAL.ttf");
+}
+
+@font-face {
+  font-family: "winter";
+  src: url("./assets/font/Winter\ Prime.otf");
+}
+
+@font-face {
+  font-family: "asmelina";
+  src: url("./assets/font/AsmelinaHarley.ttf");
+}
+.asmelina {
+  font-family: "asmelina";
+}
+.autography {
+  font-family: "autography";
+}
+.paul_jackson {
+  font-family: "paul_jackson";
+}
+.winter {
+  font-family: "winter";
 }
 .magic {
   font-family: "magic";
@@ -15,8 +47,36 @@
 html {
   font-size: 14px;
 }
-.cover {
+.faq {
+  width: 75%;
+  margin: auto;
+  padding: 10em 0em 10em 0em;
 }
+.faq-question {
+  background-color: #ffffff !important;
+  color: #da1577 !important;
+}
+.faq-question:focus {
+  background-color: #da1577 !important;
+  color: white !important;
+  box-shadow: none !important;
+  border: 1px solid #da1879;
+}
+.faq-question-highlight {
+  background-color: #da1577 !important;
+  color: white !important;
+}
+.faq-question-highlight:focus {
+  box-shadow: none !important;
+  border: 1px solid #da1879;
+}
+#projects {
+  margin: 5em 0em 5em 0em !important;
+  height: fit-content;
+  position: relative;
+  padding: 2em;
+}
+
 .about-section {
   position: relative;
   width: 100%;
@@ -24,7 +84,11 @@ html {
   background: url("./assets/img/particles.gif") top/cover no-repeat;
   z-index: 0;
 }
-
+.recents-projects {
+  margin: 1em;
+  font-family: "magic";
+  text-shadow: 1px 1px 1px #000000;
+}
 .about-section::before {
   content: "";
   position: absolute;
@@ -166,7 +230,8 @@ option {
   opacity: 0; /* Caché au départ */
   transform: translateY(20px); /* Légèrement en bas */
   animation: fadeIn 1s ease-out forwards;
-  animation-delay: 5s; /* Délai de 3 secondes avant l'apparition */
+  animation-delay: 5s;
+  /* Délai de 3 secondes avant l'apparition */
 }
 
 @keyframes fadeIn {
@@ -181,7 +246,7 @@ option {
 }
 .card-img-top {
   width: auto;
-  height: 100px;
+  height: 150px;
   object-fit: contain;
   border-radius: 5px;
 }
@@ -204,14 +269,6 @@ option {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   border: none;
 }
-.bg-card {
-  position: relative;
-  width: 100%;
-  height: 50vh;
-  background-image: url("./assets/img/orange-texture.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
 /* .bg-card::before {
   content: "";
@@ -226,9 +283,6 @@ option {
   color: #555050;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2em !important;
-}
-.container-projects {
-  height: 50vh !important;
 }
 .about-me-title {
   background-image: url("./assets/img/il_fullxfull.5596335295_3cgn.webp");
@@ -252,6 +306,7 @@ option {
   color: #555050;
 }
 .footer {
+  text-align: center;
   position: relative;
   bottom: 0 !important;
   margin-bottom: 0 !important;
@@ -391,14 +446,9 @@ option {
 #home {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  height: fit-content !important;
+  height: 100vh !important;
 }
-#projects {
-  padding-top: 6.5rem;
-  padding-bottom: 4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
+
 .mySwiper {
 }
 
@@ -584,6 +634,18 @@ input:focus {
   width: 50%;
   margin: auto;
 }
+.logo {
+  cursor: pointer;
+}
+.logo:hover {
+  /* text-shadow: 1px 1px 2px#d1b5c3; */
+  scale: 1.1;
+}
+.pink-bar {
+  padding: 1em;
+  width: 100%;
+  background-color: #473f43;
+}
 /* .web_des .card-text {
   margin-top: 5%;
 } */
@@ -598,21 +660,7 @@ input:focus {
     padding: 0;
     text-align: center;
   }
-  .bg-card {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    background-image: url("./assets/img/orange-texture.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 1rem;
-    padding-left: 0;
-    padding-right: 0;
-    height: fit-content;
-  }
+
   .about-section::before {
     content: "";
     position: absolute;
@@ -748,9 +796,6 @@ input:focus {
     padding-left: 5% !important;
     height: fit-content;
   }
-  .container-projects {
-    height: fit-content;
-  }
 
   .border-left-pink {
     border-left: 5px solid#db2c84;
@@ -779,11 +824,9 @@ input:focus {
     margin: 0 auto;
     padding: 0;
   }
-  #projects {
-    padding-top: 6.5rem;
-    padding-left: 0;
-    padding-bottom: 0;
-    height: fit-content;
+  .faq {
+    width: 85% !important;
+    padding: 10em 0em 10em 0em;
   }
   .contact-form {
     width: 100%;
@@ -797,22 +840,11 @@ input:focus {
     padding: 1%;
     color: #555050;
   }
-  .bg-card {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    background-image: url("./assets/img/orange-texture.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
   .mb-d-none {
     display: none !important;
   }
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 2em;
-    height: fit-content;
-  }
+
   .header {
     position: sticky;
     top: 0;
@@ -871,6 +903,7 @@ input:focus {
     place-items: top;
     height: 100vh;
   }
+
   .details-of-me {
     font-size: 0.8em !important;
   }
@@ -930,13 +963,6 @@ input:focus {
     padding: 0.8em;
     width: fit-content;
   }
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 4rem;
-    padding-left: 0rem;
-    padding-right: 0rem;
-    height: fit-content;
-  }
 
   .skills-content img {
     margin: 1rem;
@@ -979,13 +1005,6 @@ input:focus {
     text-align: center;
   }
 
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 4rem;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    height: 50vh;
-  }
   .recent-projects {
     padding-bottom: 1rem !important;
   }
@@ -999,13 +1018,7 @@ input:focus {
     padding: 0rem;
     text-align: center;
   }
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 4rem;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    height: 50vh;
-  }
+
   .recent-projects {
     padding-bottom: 2rem !important;
   }
@@ -1019,13 +1032,7 @@ input:focus {
     padding: 0rem;
     text-align: center;
   }
-  #projects {
-    padding-top: 6.5rem;
-    padding-bottom: 4rem;
-    padding-left: 2rem;
-    padding-bottom: 2rem;
-    height: 50vh;
-  }
+
   .recent-projects {
     padding-bottom: 3rem !important;
   }
