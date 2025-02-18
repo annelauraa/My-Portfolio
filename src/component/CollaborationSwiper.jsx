@@ -14,7 +14,7 @@ import cover3 from "../assets/img/web-designers-bangalore.jpg";
 import { motion } from "framer-motion";
 
 const fadeInVariants = {
-  hidden: { opacity: 0, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
+  hidden: { opacity: 0.5, scale: 0.9 }, // Départ avec une opacité nulle et un léger zoom-out
   visible: {
     opacity: 1,
     scale: 1,
