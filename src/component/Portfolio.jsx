@@ -228,24 +228,30 @@ const Portfolio = () => {
             />
           </motion.div>
           {/* End Texte de bienvenue */}
-
-          <motion.p
-            className="hidden lead title"
-            viewport={{ once: false, amount: 0.5 }}
-          >
-            {translations[language].title}
-          </motion.p>
           <motion.div
-            className="mt-4 button hidden"
+            variants={fadeInVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: false, amount: 0.5 }}
           >
-            <a
-              href="#collaboration-context"
-              onClick={showCollaborationContext}
-              className="text-decoration-none text-light hire_me_button mt-3"
+            <motion.p
+              className="hidden lead title"
+              viewport={{ once: false, amount: 0.5 }}
             >
-              {translations[language].hire_me}
-            </a>
+              {translations[language].title}
+            </motion.p>
+            <motion.div
+              className="mt-4 button hidden"
+              viewport={{ once: false, amount: 0.5 }}
+            >
+              <a
+                href="#collaboration-context"
+                onClick={showCollaborationContext}
+                className="text-decoration-none text-light hire_me_button mt-3"
+              >
+                {translations[language].hire_me}
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </motion.section>
