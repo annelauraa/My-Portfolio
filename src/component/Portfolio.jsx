@@ -231,18 +231,12 @@ const Portfolio = () => {
 
           <motion.p
             className="hidden lead title"
-            variants={fadeInVariants}
-            initial="hidden"
-            whileInView="visible"
             viewport={{ once: false, amount: 0.5 }}
           >
             {translations[language].title}
           </motion.p>
           <motion.div
             className="mt-4 button hidden"
-            variants={fadeInVariants}
-            initial="hidden"
-            whileInView="visible"
             viewport={{ once: false, amount: 0.5 }}
           >
             <a
